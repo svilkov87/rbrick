@@ -1,0 +1,75 @@
+@mixin transition($time){
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition:    all $time ease-in-out;
+  -o-transition:      all $time ease-in-out;
+  transition:         all $time ease-in-out;
+}
+
+@mixin transition-duration($time){
+  -webkit-transition-duration: all $time ease;
+  -moz-transition-duration:    all $time ease;
+  -o-transition-duration:      all $time ease;
+  transition-duration:         all $time ease;
+}
+@mixin clr {
+  &:after, &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    *zoom: 1;
+  }
+}
+@mixin bsh($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow:    $shadow;
+  box-shadow:         $shadow;
+  //box-shadow:         0px 0px 13px 0px rgba(50, 50, 50, 0.75);
+}
+
+@mixin bradius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+//медиа-запросы
+@mixin large{
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet_max {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop{
+ @media only screen and (max-width: 1024px) {
+  @content;
+}
+}
+
+@mixin mobile_l{
+ @media only screen and (max-width: 426px) {
+  @content;
+}
+}
+
+@mixin mobile_m{
+  @media only screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile_s{
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
