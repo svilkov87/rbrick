@@ -8,8 +8,6 @@ $(document).ready(function(){
     $(".lk_ul_child").slideToggle(100);
   });
 
-  var one = 13;
-
   //убрать садбар
     $("#close_sb").click(function(){
     $(".lk_sidebar").toggleClass('close');
@@ -17,8 +15,8 @@ $(document).ready(function(){
   });
 
 // выпадающее меню
-  $("#justify_nav").click(function(){
-    $(".menu").fadeToggle(500);
+  $("#fa-align-justify").click(function(){
+    $(".ul_nav").fadeToggle(500);
   });
 
   //могоуровневое меню
