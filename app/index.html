@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/main-270525a060.css">
+	<link rel="stylesheet" href="css/main-3a5ef62c00.css">
 	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
 	<script src="libs/jquery.bxslider/jquery.bxslider.min.js"></script>
 	<script>
@@ -39,7 +39,7 @@
             <div class="nav_left">
             <i class="fa fa-align-justify" id="fa-align-justify" aria-hidden="true"></i>
                 <ul class="ul_nav">
-                    <li class="li_nav"><a href="#">Главная</a></li>
+                    <li class="li_nav"><a href="#" class="a_nav_active">Главная</a></li>
                     <li class="li_nav"><a href="#">О компании</a></li>
                     <li class="li_nav"><a href="#">Каталог</a></li>
                     <li class="li_nav"><a href="#">Доставка</a></li>
@@ -67,12 +67,11 @@
                 <div class="row">
                     <div class="block_nav_info">
                         <div class="block_searh">
-                            <form method="post">
+                            <i class="fa fa-search" id="show_search"></i>
+                            <form method="post" class="form_search">
+                                    <i class="fa fa-times" aria-hidden="true" id="close_search"></i>
                                 <input type="text" class="search_field" value autocomplete="off"
-                                placeholder="Поиск товара, марка или артикул...">
-                                <button type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                       placeholder="Поиск товара, марка или артикул...">
                             </form>
                         </div>
                         <div class="block_nav_contacts">
@@ -85,6 +84,7 @@
                                 <p>8 800 000 000</p>
                             </div>
                         </div>
+                        <div class="call_n_offer"></div>
                     </div>
                 </div>
             </div>

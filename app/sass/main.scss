@@ -120,7 +120,7 @@ body{
     #fa-align-justify{
       line-height: 40px;
       padding: 0 10px;
-      color: #fff;
+      color: #000;
       display: none;
       @include mobile_l{
         display: block;
@@ -143,11 +143,12 @@ body{
           line-height: 40px;
           display: block;
           padding: 0 10px;
-          color: #fff;
           text-transform: uppercase;
-          font-size: 12px;
+          font-size: 14px;
+          color: $navclr;
           &:hover{
-            background: #969696;
+            background: $def_hover_bg;
+            color: #fff;
           }
         }
       }
@@ -157,12 +158,14 @@ body{
 .nav_bottom{
   min-height: 100px;
   margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px dashed $border_bott_nav;
   .container{
-    border-bottom: 1px dashed $border_bott_nav;
+
     .block_logo {
       display: table-cell;
       width: 260px;
-      height: 100px;
+      height: 80px;
       vertical-align: middle;
       padding: 0 10px;
       @include mobile_l{
@@ -173,7 +176,13 @@ body{
       h2 {
         text-transform: uppercase;
         font-size: 25px;
-        padding: 5px 0;
+        margin-bottom: 5px;
+        @include tablet{
+          font-size: 20px;
+        }
+        @include mobile_l{
+          padding-top: 20px;
+        }
         .red_w {
           color: red;
         }
@@ -182,6 +191,9 @@ body{
         text-transform: uppercase;
         font-size: 13px;
         width: 80%;
+        @include tablet{
+          width: 100%;
+        }
         @include mobile_l{
           width: 100%;
         }
@@ -190,63 +202,111 @@ body{
     .block_nav_info{
       .block_searh{
         text-align: center;
-        display: table-cell;
-        height: 100px;
-        vertical-align: middle;
-        padding: 0 10px;
-        form{
-          margin: 0 auto;
-          display: table;
+        display: block;
+        float: left;
+        margin-top: 32px;
+        //padding: 0 10px;
+        #show_search{
+          cursor: pointer;
+          &:hover{
+            color: $def_hover_bg;
+          }
+        }
+        @include mobile_l{
+          text-align: center;
+          display: inline-block;
+          width: 100%;
+          height: auto;
+          vertical-align: middle;
+          padding: 0 10px;
+          margin-bottom: 15px;
+        }
+        .form_search{
+          //right: 0;
+          top: 0;
+          box-sizing: border-box;
+          width: 0;
+          overflow: hidden;
+          position: absolute;
+          height: 80px;
+          @include transition(.1s);
+          @include mobile_l{
+            margin: 0;
+          }
+          #close_search{
+            background: 0 0;
+            color: $def_hover_bg;
+            cursor: pointer;
+            position: absolute;
+            z-index: 9;
+            left: 0;
+            top: 30px;
+          }
           .search_field{
-            // width: 300px;
-            display: none;
-            float: left;
+            display: block;
+            //right: 0;
+            top: 0;
+            width: 100%;
+            position: absolute;
+            height: 80px;
+            padding-left: 25px;
+            text-transform: uppercase;
             border: none;
             border-bottom: 1px solid #ccc;
-            padding: 5px 10px;
             overflow: hidden;
-            outline: none;
-            color: #9E9C9C;
+            outline: 0;
+            color: #000;
+            @include mobile_l{
+              width: 100%;
+            }
           }
-          button{
-            background: transparent;
-            // line-height: 100px;
-            border: none;
-            padding: 5px 10px;
-            // right: 10px;
-            color: #42AAEF;
-            cursor: pointer;
+        }
+        .slide_search{
+          width: 65%;
+          left: 0;
+          @include mobile_l{
+            width: 95%;
+            left: auto;
           }
         }
       }
-    }
-    .block_nav_contacts{
-      display: table-cell;
-      height: 100px;
-      vertical-align: middle;
-      padding: 0 10px;
-      // font-size: 10px;
-      .email_block{
+      .block_nav_contacts{
         display: inline-block;
-        margin-left: 10px;
-        border-left: 1px solid #ccc;
+        vertical-align: middle;
         padding: 0 10px;
-        text-transform: uppercase;
-        font-size: 14px;
-        .em_p{
-          font-weight: bold;
+        margin-top: 30px;
+        @include mobile_l{
+          display: none;
+        }
+        .email_block{
+          display: inline-block;
+          margin-left: 10px;
+          border-left: 1px solid #ccc;
+          padding: 0 10px;
+          text-transform: uppercase;
+          font-size: 14px;
+          .em_p{
+            font-weight: bold;
+          }
+        }
+        .phone_block{
+          display: inline-block;
+          margin-left: 10px;
+          border-left: 1px solid #ccc;
+          padding: 0 10px;
+          text-transform: uppercase;
+          font-size: 14px;
+          .ph_p{
+            font-weight: bold;
+          }
         }
       }
-      .phone_block{
-        display: inline-block;
-        margin-left: 10px;
-        border-left: 1px solid #ccc;
-        padding: 0 10px;
-        text-transform: uppercase;
-        font-size: 14px;
-        .ph_p{
-          font-weight: bold;
-        }
+      .call_n_offer{
+        line-height: 100px;
+        height: 80px;
+        width: 300px;
+        border: 1px solid #ccc;
+        float: right;
       }
     }
   }
