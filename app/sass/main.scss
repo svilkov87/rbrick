@@ -127,6 +127,9 @@ body{
       }
     }
     .ul_nav{
+      @include large{
+        display: block;
+      }
       @include mobile_l{
         display: none;
         position: absolute;
@@ -200,6 +203,8 @@ body{
       }
     }
     .block_nav_info{
+      overflow: hidden;
+      display: inline-block;
       .block_searh{
         text-align: center;
         display: block;
@@ -301,12 +306,16 @@ body{
           }
         }
       }
-      .call_n_offer{
-        line-height: 100px;
-        height: 80px;
-        width: 300px;
-        border: 1px solid #ccc;
-        float: right;
+    }
+    .call_n_offer{
+      line-height: 100px;
+      height: 80px;
+      width: 300px;
+      border: 1px solid #ccc;
+      float: right;
+      @include mobile_l{
+        float: none;
+        margin: 0 auto;
       }
     }
   }
