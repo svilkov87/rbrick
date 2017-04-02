@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //выпадающий блок "о нас"
-    $("#show_nav").click(function () {
-        $(".ul_menu").slideToggle(100);
+    $("#fa-align-justify").click(function () {
+        $(".ul_nav").slideToggle(100);
     });
     //выпадающий доп меню в лк (навигация)
     $("#showNav").click(function () {
@@ -23,11 +23,15 @@ $(document).ready(function () {
         $(".lk_wrapp_content").toggleClass('wr_left');
     });
 
-    // выпадающее меню
-    $(".call_link").click(function (e) {
+    // модальное окно ( заказ звонка )
+    $(".call_link").click(function () {
         var modal = $(".modal");
-        modal.fadeIn(500);
+        modal.fadeIn(200);
+     });
+    $(".close").click(function () {
+        $(".modal").fadeOut(200);
     });
+
 
     //могоуровневое меню
     $('.ul_menu .li_nav').hover(
