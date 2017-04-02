@@ -4,8 +4,7 @@
 @import 'base/reset';
 
 body{
-  font-family: 'Roboto Condensed', sans-serif!important;
-  //font-family: inherit;
+  font-family: 'Roboto Condensed', sans-serif !important;
   a{
     text-decoration: none;
   }
@@ -152,26 +151,30 @@ body{
           &:hover{
             background: $def_hover_bg;
             color: #fff;
+            border-bottom: 2px solid $def_clr_main;
           }
+        }
+        .a_nav_active{
+          border-bottom: 2px solid $def_clr_main;
         }
       }
     }
   }
 }
-.nav_bottom{
+
+.nav_bottom {
   min-height: 100px;
   margin-bottom: 20px;
   padding: 15px 0;
   border-bottom: 1px dashed $border_bott_nav;
-  .container{
-
+  .container {
     .block_logo {
       display: table-cell;
       width: 260px;
       height: 80px;
       vertical-align: middle;
       padding: 0 10px;
-      @include mobile_l{
+      @include mobile_l {
         margin: 0 auto;
         display: block;
         text-align: center;
@@ -180,44 +183,45 @@ body{
         text-transform: uppercase;
         font-size: 25px;
         margin-bottom: 5px;
-        @include tablet{
+        @include tablet {
           font-size: 20px;
         }
-        @include mobile_l{
+        @include mobile_l {
           padding-top: 20px;
         }
         .red_w {
           color: red;
         }
       }
-      .slogan_logo{
+      .slogan_logo {
         text-transform: uppercase;
         font-size: 13px;
         width: 80%;
-        @include tablet{
+        @include tablet {
           width: 100%;
         }
-        @include mobile_l{
+        @include mobile_l {
           width: 100%;
         }
       }
     }
-    .block_nav_info{
+    .block_nav_info {
+      margin-left: 15px;
       overflow: hidden;
       display: inline-block;
-      .block_searh{
+      .block_searh {
         text-align: center;
         display: block;
         float: left;
         margin-top: 32px;
         //padding: 0 10px;
-        #show_search{
+        #show_search {
           cursor: pointer;
-          &:hover{
-            color: $def_hover_bg;
+          &:hover {
+            color: $def_clr_main;
           }
         }
-        @include mobile_l{
+        @include mobile_l {
           text-align: center;
           display: inline-block;
           width: 100%;
@@ -226,7 +230,7 @@ body{
           padding: 0 10px;
           margin-bottom: 15px;
         }
-        .form_search{
+        .form_search {
           //right: 0;
           top: 0;
           box-sizing: border-box;
@@ -235,10 +239,10 @@ body{
           position: absolute;
           height: 80px;
           @include transition(.1s);
-          @include mobile_l{
+          @include mobile_l {
             margin: 0;
           }
-          #close_search{
+          #close_search {
             background: 0 0;
             color: $def_hover_bg;
             cursor: pointer;
@@ -247,7 +251,7 @@ body{
             left: 0;
             top: 30px;
           }
-          .search_field{
+          .search_field {
             display: block;
             //right: 0;
             top: 0;
@@ -261,61 +265,82 @@ body{
             overflow: hidden;
             outline: 0;
             color: #000;
-            @include mobile_l{
+            @include mobile_l {
               width: 100%;
             }
           }
         }
-        .slide_search{
+        .slide_search {
           width: 65%;
           left: 0;
-          @include mobile_l{
+          @include mobile_l {
             width: 95%;
             left: auto;
           }
         }
       }
-      .block_nav_contacts{
+      .block_nav_contacts {
         display: inline-block;
         vertical-align: middle;
         padding: 0 10px;
         margin-top: 30px;
-        @include mobile_l{
+        @include mobile_l {
           display: none;
         }
-        .email_block{
+        .email_block {
           display: inline-block;
           margin-left: 10px;
           border-left: 1px solid #ccc;
           padding: 0 10px;
           text-transform: uppercase;
           font-size: 14px;
-          .em_p{
+          .em_p {
             font-weight: bold;
           }
         }
-        .phone_block{
+        .phone_block {
           display: inline-block;
           margin-left: 10px;
           border-left: 1px solid #ccc;
           padding: 0 10px;
           text-transform: uppercase;
           font-size: 14px;
-          .ph_p{
+          .ph_p {
             font-weight: bold;
           }
         }
       }
     }
-    .call_n_offer{
-      line-height: 100px;
+    .call {
       height: 80px;
       width: 300px;
-      border: 1px solid #ccc;
       float: right;
-      @include mobile_l{
+      @include mobile_l {
         float: none;
         margin: 0 auto;
+      }
+      .call_link {
+        padding-left: 35px;
+        line-height: 80px;
+        color: #000;
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+        &:after {
+          content: "\f098";
+          color: $def_clr_main;
+          display: inline-block;
+          position: absolute;
+          top: 31px;
+          left: 10px;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+        &:hover{
+          color: $def_clr_main;
+        }
       }
     }
   }

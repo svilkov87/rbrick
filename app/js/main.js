@@ -23,9 +23,10 @@ $(document).ready(function () {
         $(".lk_wrapp_content").toggleClass('wr_left');
     });
 
-// выпадающее меню
-    $("#fa-align-justify").click(function () {
-        $(".ul_nav").fadeToggle(500);
+    // выпадающее меню
+    $(".call_link").click(function (e) {
+        var modal = $(".modal");
+        modal.fadeIn(500);
     });
 
     //могоуровневое меню
