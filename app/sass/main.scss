@@ -25,9 +25,12 @@ body{
     background-color: #fefefe;
     margin: 5% auto;
     padding: 15px;
-    width: 70%;
+    width: 60%;
     height: auto;
     overflow: hidden;
+    @include mobile_l{
+      width: 100%;
+    }
     .close{
       float: right;
       font-size: 20px;
@@ -62,7 +65,7 @@ body{
         .name, .s_name, .theme{
           margin-bottom: 15px;
         span{
-          font-size: 20px;
+          font-size: 15px;
         }
         #name, #s_name {
           width: 100%;
@@ -111,6 +114,58 @@ body{
     }
   }
 }
+
+//wrapp offer
+.bg_offer{
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.73);
+}
+.wrapp_offer_online{
+  @include transition(.2s);
+  position: fixed;
+  height: 100%;
+  background: #fff;
+  width: 0;
+  top: 0;
+  right: 0;
+  z-index: 999999;
+  .close_offer{
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .wr_off_inner{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    .offer_header{
+      padding: 3px;
+      text-align: center;
+    }
+  }
+}
+.open{
+  right: 0;
+  width: 50%;
+  z-index: 9999999;
+  @include mobile_l{
+    width: 80%;
+  }
+}
+
+
+
+
+
 //nav
 .nav{
   background: $navbg;
@@ -261,8 +316,9 @@ body{
           }
           #close_search {
             background: 0 0;
-            color: $def_hover_bg;
+            color: #000;
             cursor: pointer;
+
             position: absolute;
             z-index: 9;
             left: 0;
@@ -369,74 +425,75 @@ body{
   }
 }
 
+
 //sidebar
-.sidebar{
-  .side_product{
+.sidebar {
+  .side_product {
     text-transform: uppercase;
     margin-bottom: 15px;
   }
-    .sideb_ul{
-      .side_li{
-        position: relative;
-        .a_side_main{
-          display: block;
-          padding: 10px 0;
-          text-transform: uppercase;
-          color: #000;
-          border-bottom: 1px dashed #ccc;
-          &:hover{
-            background: $def_clr_main;
-            color: #fff;
-            padding-left: 10px;
-            @include transition(0.2s);
-          }
-          &:hover::after{
-            color: #fff;
-          }
-          &:after {
-            content: "\f054";
-            color: $def_clr_main;
-            display: inline-block;
-            position: absolute;
-            right: 20px;
-            margin-top: 3px;
-            font: normal normal normal 14px/1 FontAwesome;
-            font-size: 12px;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            @include mobile_s{
-              left: 16px;
-            }
-          }
+  .sideb_ul {
+    .side_li {
+      position: relative;
+      .a_side_main {
+        display: block;
+        padding: 10px 0;
+        text-transform: uppercase;
+        color: #000;
+        border-bottom: 1px dashed #ccc;
+        &:hover {
+          background: $def_clr_main;
+          color: #fff;
+          padding-left: 10px;
+          @include transition(0.2s);
         }
-        .side_addition_block{
-          display: none;
-          top: 0;
-          left: 100%;
-          width: 250px;
-          z-index: 101010;
-          height: auto;
-          padding: 10px;
+        &:hover::after {
+          color: #fff;
+        }
+        &:after {
+          content: "\f054";
+          color: $def_clr_main;
+          display: inline-block;
           position: absolute;
-          background: #fff;
-          @include mobile_l{
-            width: 250px;
-            z-index: 1010;
-            height: 50px;
-            background: #fff;
-          }
-          .side_add_header{
-            display: inline-block;
-            padding: 10px;
-            text-transform: uppercase;
-          }
-          .a_child_side{
-            padding: 10px;
-            display: inline-block;
+          right: 20px;
+          margin-top: 3px;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: 12px;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          @include mobile_s {
+            left: 16px;
           }
         }
       }
+      .side_addition_block {
+        display: none;
+        top: 0;
+        left: 100%;
+        width: 250px;
+        z-index: 101010;
+        height: auto;
+        padding: 10px;
+        position: absolute;
+        background: #fff;
+        @include mobile_l {
+          width: 250px;
+          z-index: 1010;
+          height: 50px;
+          background: #fff;
+        }
+        .side_add_header {
+          display: inline-block;
+          padding: 10px;
+          text-transform: uppercase;
+        }
+        .a_child_side {
+          padding: 10px;
+          display: inline-block;
+        }
+      }
     }
+  }
 }
 
 //slider

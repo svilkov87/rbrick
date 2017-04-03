@@ -16,6 +16,19 @@ $(document).ready(function () {
         $(".form_search").removeClass("slide_search");
     });
 
+    //показываем форму онлайн запроса
+    $(".sh_online_offer").click(function () {
+        $(".wrapp_offer_online").addClass("open");
+        setTimeout (function(){
+            $(".bg_offer").css("display", "block");
+        }, 200);
+    });
+    $(".close_offer").click(function () {
+        $(".wrapp_offer_online").removeClass("open");
+        setTimeout (function(){
+            $(".bg_offer").css("display", "none");
+        }, 200);
+    });
 
     //убрать садбар
     $("#close_sb").click(function () {
