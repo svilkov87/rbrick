@@ -170,6 +170,8 @@ body{
       line-height: 40px;
       text-transform: uppercase;
       padding: 0 10px;
+      color: #fff;
+      background: $def_clr_main;
       @include mobile_l{
         font-size: 14px;
       }
@@ -375,7 +377,8 @@ body{
   }
     .sideb_ul{
       .side_li{
-        a{
+        position: relative;
+        .a_side_main{
           display: block;
           padding: 10px 0;
           text-transform: uppercase;
@@ -404,6 +407,32 @@ body{
             @include mobile_s{
               left: 16px;
             }
+          }
+        }
+        .side_addition_block{
+          display: none;
+          top: 0;
+          left: 100%;
+          width: 250px;
+          z-index: 101010;
+          height: auto;
+          padding: 10px;
+          position: absolute;
+          background: #fff;
+          @include mobile_l{
+            width: 250px;
+            z-index: 1010;
+            height: 50px;
+            background: #fff;
+          }
+          .side_add_header{
+            display: inline-block;
+            padding: 10px;
+            text-transform: uppercase;
+          }
+          .a_child_side{
+            padding: 10px;
+            display: inline-block;
           }
         }
       }

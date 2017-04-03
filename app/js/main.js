@@ -34,16 +34,12 @@ $(document).ready(function () {
 
 
     //могоуровневое меню
-    $('.ul_menu .li_nav').hover(
+    $('.side_li').hover(
         function () {
-            $(this).css("background", "#8c878c");
-            $('a', this).css("color", "#fff");
-            $('ul:first', this).slideDown(150);
+            $('div:first', this).fadeIn(150);
         },
         function () {
-            $(this).css("background", "#444050");
-            $('a', this).css("color", "#ffbc00");
-            $('ul:first', this).slideUp(150);
+            $('div:first', this).fadeOut(150);
         }
     );
 
