@@ -235,10 +235,11 @@ body{
 }
 
 .nav_bottom {
-  min-height: 100px;
-  margin-bottom: 20px;
-  padding: 15px 0;
-  border-bottom: 1px dashed $border_bott_nav;
+    background: #f7f5f5;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border: 1px solid $border_bott_nav;
   .container {
     .block_logo {
       display: table-cell;
@@ -280,107 +281,53 @@ body{
     .block_nav_info {
       margin-left: 15px;
       overflow: hidden;
-      display: inline-block;
-      .block_searh {
-        text-align: center;
-        display: block;
-        float: left;
-        margin-top: 32px;
-        //padding: 0 10px;
-        #show_search {
-          cursor: pointer;
-          &:hover {
-            color: $def_clr_main;
-          }
-        }
-        @include mobile_l {
-          text-align: center;
-          display: inline-block;
-          width: 100%;
-          height: auto;
-          vertical-align: middle;
-          padding: 0 10px;
-          margin-bottom: 15px;
-        }
-        .form_search {
-          //right: 0;
-          top: 0;
-          box-sizing: border-box;
-          width: 0;
-          overflow: hidden;
-          position: absolute;
-          height: 80px;
-          @include transition(.1s);
-          @include mobile_l {
-            margin: 0;
-          }
-          #close_search {
-            background: 0 0;
+      display: block;
+      .wrapp_nav_change{
+        overflow: hidden;
+        height: 75px;
+        .nav_inf_search{
+           position: fixed;
+           height: 75px;
+           width: 75px;
+           // background: #000;
+           color: #fff;
+           text-align: center;
+           &:hover + .down_search{
+             margin-top: 0;
+           }
+           #show_search{
+            line-height: 75px;
             color: #000;
-            cursor: pointer;
-
-            position: absolute;
-            z-index: 9;
-            left: 0;
-            top: 30px;
-          }
-          .search_field {
-            display: block;
-            //right: 0;
-            top: 0;
-            width: 100%;
-            position: absolute;
-            height: 80px;
-            padding-left: 25px;
-            text-transform: uppercase;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            overflow: hidden;
-            outline: 0;
-            color: #000;
-            @include mobile_l {
-              width: 100%;
+            &:hover{
+              background: $navlinkhov;
+              padding: 30px;
+              line-height: 0;
             }
-          }
-        }
-        .slide_search {
-          width: 65%;
-          left: 0;
-          @include mobile_l {
-            width: 95%;
-            left: auto;
+           }
+         }
+         .down_search{
+          margin-left: 75px;
+          height: 75px;
+          background: #bbb;
+          margin-top: -75px;
+          @include transition (.3s);
+          &:hover{
+           margin-top: 0;
+         }
+         .down_form_search{
+          .down_search_field{
+            line-height: 75px;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding-left: 15px;
           }
         }
       }
-      .block_nav_contacts {
-        display: inline-block;
-        vertical-align: middle;
-        padding: 0 10px;
-        margin-top: 30px;
-        @include mobile_l {
-          display: none;
-        }
-        .email_block {
-          display: inline-block;
-          margin-left: 10px;
-          border-left: 1px solid #ccc;
-          padding: 0 10px;
-          text-transform: uppercase;
-          font-size: 14px;
-          .em_p {
-            font-weight: bold;
-          }
-        }
-        .phone_block {
-          display: inline-block;
-          margin-left: 10px;
-          border-left: 1px solid #ccc;
-          padding: 0 10px;
-          text-transform: uppercase;
-          font-size: 14px;
-          .ph_p {
-            font-weight: bold;
-          }
+        .nav_inf_contact{
+          margin-left: 75px;
+          background: #ccc;
+          height: 75px;
         }
       }
     }
