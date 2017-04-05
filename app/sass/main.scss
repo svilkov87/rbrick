@@ -162,10 +162,6 @@ body{
   }
 }
 
-
-
-
-
 //nav
 .nav{
   background: $navbg;
@@ -282,31 +278,50 @@ body{
       margin-left: 15px;
       overflow: hidden;
       display: block;
+      @include mobile_l{
+        margin-left: 0;
+      }
       .wrapp_nav_change{
         overflow: hidden;
         height: 75px;
+        @include mobile_l{
+          height: 60px;
+        }
         .nav_inf_search{
-           position: fixed;
+           position: absolute;
            height: 75px;
            width: 75px;
-           // background: #000;
            color: #fff;
            text-align: center;
            &:hover + .down_search{
              margin-top: 0;
            }
+          @include mobile_l{
+            height: 60px;
+            width: 60px;
+          }
            #show_search{
-            line-height: 75px;
-            color: #000;
-            &:hover{
-              background: $navlinkhov;
-              padding: 30px;
-              line-height: 0;
-            }
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             margin: auto;
+             color: #000;
+             line-height: 75px;
+             display: block;
+             @include bradius(50%);
+             &:hover{
+               color: #fff;
+               background: $def_clr_main;
+               @include transition(.2s);
+             }
+             @include mobile_l{
+               line-height: 60px;
+             }
            }
          }
          .down_search{
-          margin-left: 75px;
+          margin-left: 80px;
           height: 75px;
           background: #bbb;
           margin-top: -75px;
@@ -314,6 +329,9 @@ body{
           &:hover{
            margin-top: 0;
          }
+           @include mobile_l{
+             height: 60px;
+           }
          .down_form_search{
           .down_search_field{
             line-height: 75px;
@@ -321,31 +339,65 @@ body{
             border: none;
             outline: none;
             padding-left: 15px;
+            @include mobile_l{
+              line-height: 60px;
+            }
           }
         }
       }
         .nav_inf_contact{
-          margin-left: 75px;
-          background: #ccc;
+          position: relative;
+          margin-left: 80px;
+          background: #fff;
           height: 75px;
+          .em_p{
+            position: absolute;
+            top: 25%;
+            left: 15px;
+            padding-left: 20px;
+            &:before{
+              content: "\f003";
+              color: #000;
+              display: inline-block;
+              margin-top: 3px;
+              margin-right: 10px;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 12px;
+            }
+          }
+          .em{
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            padding-left: 20px;
+            &:before{
+              content: "\f095";
+              color: #000;
+              display: inline-block;
+              margin-top: 3px;
+              margin-right: 10px;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 12px;
+            }
+          }
         }
       }
     }
     .call {
-      height: 80px;
-      width: 300px;
-      float: right;
       @include mobile_l {
         float: none;
         margin: 0 auto;
       }
       .call_link {
         padding-left: 35px;
-        line-height: 80px;
+        line-height: 75px;
         color: #000;
         text-transform: uppercase;
         position: relative;
         cursor: pointer;
+        @include tablet_max{
+          font-size: 12px;
+        }
         @include mobile_s{
           padding-left: 40px;
         }
@@ -354,7 +406,7 @@ body{
           color: $def_clr_main;
           display: inline-block;
           position: absolute;
-          top: 31px;
+          top: 29px;
           left: 10px;
           font: normal normal normal 14px/1 FontAwesome;
           font-size: inherit;
@@ -412,6 +464,9 @@ body{
             left: 16px;
           }
         }
+        @include mobile_l{
+          display: inline-block;
+        }
       }
       .side_addition_block {
         display: none;
@@ -424,15 +479,19 @@ body{
         position: absolute;
         background: #fff;
         @include mobile_l {
-          width: 250px;
+          width: 100%;
           z-index: 1010;
-          height: 50px;
-          background: #fff;
+          height: auto;
+          position: relative;
+          left: 0;
         }
         .side_add_header {
           display: inline-block;
           padding: 10px;
           text-transform: uppercase;
+          @include mobile_l {
+            display: none;
+          }
         }
         .a_child_side {
           padding: 10px;

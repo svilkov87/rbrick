@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8"> 
-	<title>stroy-hammer</title>
-	<meta name="description" content="IMPOVAR" />
+	<title>Русский Кирпич</title>
+	<meta name="description" content="rbrick-nn.ru" />
 	<?php include("include/head.php");?>
 	<script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.min.js"></script>
 	<script>
@@ -26,209 +26,159 @@
 </head>
 <body>
 <?php include("include/modal.php");?>
+<div class="bg_offer"></div>
+<div class="wrapp_offer_online">
+    <span class="close_offer">&times;</span>
+    <div class="wr_off_inner">
+        <div class="offer_header">
+            <span class="span_offer">Расчет стоимости он-лайн</span>
+        </div>
+    </div>
+</div>
 <div class="nav">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="logo_block">
-					<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/logo_hammer_1.svg">
-					<p class="logo_p">stroy hammer</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<div class="nav_info">
-					<div class="adress_info">
-						<div class="adress_item">
-							<i class="fa fa-phone" aria-hidden="true"></i>
-							<span class="tel">8 800 000 000</span>
-						</div>
-						<div class="adress_item">
-							<i class="fa fa-map-marker" aria-hidden="true"></i>
-							<span class="adress">Нижний Новгород</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="nav_bottom">
-		<div class="container">
-			<div class="row">
-				<i class="fa fa-bars" id="show_nav" aria-hidden="true"></i>
-				<ul class="ul_menu">
-					<li class="li_nav"><a href="#">главная</a></li>
-					<li class="li_nav">
-						<a href="#">услуги</a>
-						<ul class="ul_child_serv">
-							<li class="li_serv"><a href="#">отделка</a></li>
-							<li class="li_serv"><a href="#">выезд специалиста</a></li>
-							<li class="li_serv"><a href="#">помощь в приобретении материалов</a></li>
-							<li class="li_serv"><a href="#">вывоз мусора</a></li>
-						</ul>
-					</li>
-					<li class="li_nav"><a href="#">цены</a></li>
-					<li class="li_nav"><a href="#">наши работы</a></li>
-					<li class="li_nav"><a href="#">акции</a></li>
-					<li class="li_nav"><a href="#">подарки</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="nav_left">
+                <i class="fa fa-align-justify" id="fa-align-justify" aria-hidden="true"></i>
+                <ul class="ul_nav">
+                    <li class="li_nav"><a href="#" class="a_nav_active">Главная</a></li>
+                    <li class="li_nav"><a href="#">О компании</a></li>
+                    <li class="li_nav"><a href="#">Каталог</a></li>
+                    <li class="li_nav"><a href="#">Доставка</a></li>
+                    <li class="li_nav"><a href="#">контакты</a></li>
+                </ul>
+            </div>
+            <div class="nav_right">
+                <a href="#" class="sh_online_offer">Онлайн-предложение</a>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="wrapp_slider">
-	<div class="container-fluid">
-		<div class="row">
-			<ul class="bxslider">
-				<li>
-					<img src="http://www.elitecleaners.co.uk/wp-content/uploads/2012/02/house-cleaning1.jpg">
-					<div class="content_slider">
-						<h2 class="header_content_slider">Лучший в мире ремонт</h2>
-						<p class="inner_slider">Лучший в мире сайт о ремонте...</p>
-					</div>
-				</li>
-				<li>
-					<img src="http://zar-remont.ru/assets/common/11-94bc08e66ddc0fac0edf5f619c5e74e4.jpg">
-					<div class="content_slider">
-						<h2 class="header_content_slider">Лучшие в мире работники</h2>
-						<p class="inner_slider">Лучший в мире Шура</p>
-					</div>
-				</li>
-				<li>
-					<img src="http://mebel-fox.by/wp-content/uploads/2015/09/prihojaya-1024x500.jpg">
-					<div class="content_slider">
-						<h2 class="header_content_slider">Лучший в мире СэнСэй</h2>
-						<p class="inner_slider">Лучший в мире Денис</p>
-					</div>
-				</li>
-				<li>
-					<img src="http://comfortsolutions.com.ua/img/slide-02.jpg">
-					<div class="content_slider">
-						<h2 class="header_content_slider">Много денег получим</h2>
-						<p class="inner_slider">Спасибо за работу!</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+<div class="nav_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <div class="row">
+                    <div class="block_logo">
+                        <h2>
+                            <span class="red_w">Р</span>усский
+                            <span class="red_w">К</span>ирпич
+                        </h2>
+                        <p class="slogan_logo">Комплексное снабжение строительных объектов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <div class="row">
+                    <div class="block_nav_info">
+                        <div class="con-md-8 col-sm-8">
+                            <div class="wrapp_nav_change">
+                                <div class="nav_inf_search">
+                                    <i class="fa fa-search" id="show_search"></i>
+                                </div>
+                                <div class="down_search">
+                                    <form method="post" class="down_form_search">
+                                        <input type="text" class="down_search_field" value autocomplete="off"
+                                               placeholder="Поиск товара, марка или артикул...">
+                                    </form>
+                                </div>
+                                <div class="nav_inf_contact">
+                                    <p class="em_p">brr.rk52@gmail.com</p>
+                                    <p class="em">8 950 000 15 12</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="con-md-4 col-sm-4">
+                            <div class="call">
+                                <p class="call_link">Заказать звонок</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="main_wrapp">
-	<div class="container">
-		<div class="row">
-			<div class="main_head">
-				<h1 class="head_title">Услуги по ремонту квартир, домов, офисов в Нижнем Новгороде</h1>
-				<p class="as_we_doing">Кототко о том, как мы делаем ремонт:</p>
-			</div>
-			<div class="main_advantages">
-				<div class="col-md-3 col-sm-6">
-					<div class="item_adv">
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Good Quality-100.png" alt="Thumb Up-100.png" class="item_img">
-						<div class="item_full_down">
-							<div class="item_full_desc">
-								<p>Три слова нашем качестве</p>
-								<p>Три слова нашем качестве</p>
-								<p>Три слова нашем качестве</p>
-								<p>Три слова нашем качестве</p>
-							</div>
-							<div class="p_wrapp">
-								<p class="p_down_desc">качественно</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="item_adv">
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Wrench-100 (1).png" alt="Thumb Up-100.png" class="item_img">
-						<div class="item_full_down">
-							<div class="item_full_desc">
-								<p>Какие мы профессионалы</p>
-								<p>Какие мы профессионалы</p>
-								<p>Какие мы профессионалы</p>
-								<p>Какие мы профессионалы</p>
-							</div>
-							<div class="p_wrapp">
-								<p class="p_down_desc">профессионально</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="item_adv">
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Wedding Gift-50.png" alt="Thumb Up-100.png" class="item_img">
-						<div class="item_full_down">
-							<div class="item_full_desc">
-								<p>Почему у нас выгодно</p>
-								<p>Почему у нас выгодно</p>
-								<p>Почему у нас выгодно</p>
-								<p>Почему у нас выгодно</p>
-							</div>
-							<div class="p_wrapp">
-								<p class="p_down_desc">100% подарки</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="item_adv">
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/View Details-100.png" alt="" class="item_img">
-						<div class="item_full_down">
-							<div class="item_full_desc">
-								<p>Наша гарантия</p>
-								<p>Наша гарантия</p>
-							</div>
-							<div class="p_wrapp">
-								<p class="p_down_desc">гарантия</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="center_head">
-				<h1 class="center_title">Мы реализуем полный комплекс услуг по ремонту и отделке помещений:</h1>
-				<ul>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/RV Campground-100.png" alt="">
-						<p class="as_we_working">Выезд специалиста на объект</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Drafting Compass-100 (1).png" alt="">
-						<p class="as_we_working">Осмотр и замер</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Request Service-100.png" alt="">
-						<p class="as_we_working">Консультация</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Fill Color-100.png" alt="">
-						<p class="as_we_working">Помощь в подборе материалов</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Bill-100.png" alt="">
-						<p class="as_we_working">Составление прозрачной сметы</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Handshake-100.png" alt="">
-						<p class="as_we_working">Заключение договора</p>
-					</li>
-					<li>
-						<img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/Wallpaper Roll-100.png" alt="">
-						<p class="as_we_working">Ремонт и отделка</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="coose_our">
-				<div class="coose_child">
-					<h2 class="choose_head">Воспользуйтесь нашими услугами!</h2>
-					<p class="choose_desc">Оставьте заявку и мы свяжемся с Вами в ближайшее время.</p>
-					<a href="#" class="send_need">Оставить запрос</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar">
+                <div class="side_product">Продукция</div>
+                <ul class="sideb_ul">
+                    <li class="side_li">
+                        <a href="#" class="a_side_main">Кирпич</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Кирпич</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li">
+                        <a href="#" class="a_side_main">Блоки</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Блоки</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li">
+                        <a href="#" class="a_side_main">Сухие смеси</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Смеси</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li"><a href="#" class="a_side_main">Утеплитель</a></li>
+                    <li class="side_li"><a href="#" class="a_side_main">Пазогребневые плиты</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="wrapp_slider">
+                <div class="container-fluid">
+                    <div class="row">
+                        <ul class="bxslider">
+                            <li>
+                                <img src="http://www.elitecleaners.co.uk/wp-content/uploads/2012/02/house-cleaning1.jpg">
+                                <div class="content_slider">
+                                    <h2 class="header_content_slider">Лучший в мире ремонт</h2>
+                                    <p class="inner_slider">Лучший в мире сайт о ремонте...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="http://zar-remont.ru/assets/common/11-94bc08e66ddc0fac0edf5f619c5e74e4.jpg">
+                                <div class="content_slider">
+                                    <h2 class="header_content_slider">Лучшие в мире работники</h2>
+                                    <p class="inner_slider">Лучший в мире Шура</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="http://levillagestbarth.com/wp-content/uploads/2016/05/Standard-hotel-bathroom.jpg">
+                                <div class="content_slider">
+                                    <h2 class="header_content_slider">Лучший в мире СэнСэй</h2>
+                                    <p class="inner_slider">Лучший в мире Денис</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="http://comfortsolutions.com.ua/img/slide-02.jpg">
+                                <div class="content_slider">
+                                    <h2 class="header_content_slider">Много денег получим</h2>
+                                    <p class="inner_slider">Спасибо за работу!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php include("include/scripts.php");?>
 </body>

@@ -52,7 +52,7 @@ $(document).ready(function () {
             $('div:first', this).fadeIn(150);
         },
         function () {
-            $('div:first', this).fadeOut(150);
+            $('div:first', this).fadeOut(10);
         }
     );
 

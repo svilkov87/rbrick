@@ -6,4 +6,3 @@
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/animate.css">
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main.min.css">
 	<script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/libs/jquery/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/wow.min.js"></script>
