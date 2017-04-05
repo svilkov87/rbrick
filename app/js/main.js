@@ -1,8 +1,4 @@
 $(document).ready(function () {
-    //выпадающий блок "о нас"
-    $("#fa-align-justify").click(function () {
-        $(".ul_nav").slideToggle(100);
-    });
     //выпадающий доп меню в лк (навигация)
     $("#showNav").click(function () {
         $(".lk_ul_child").slideToggle(100);
@@ -55,6 +51,16 @@ $(document).ready(function () {
             $('div:first', this).fadeOut(10);
         }
     );
+
+        //аккордеон
+    // $(".sideb_ul_mb div").hide().prevUntil(".side_li_mb").click(function() {
+    //     $(".sideb_ul_mb div").not(this).slideUp();
+    //     $(this).next().not(":visible").slideDown();
+    // });
+
+        $(".sideb_ul_mb div").click(function() {
+            $(this.hide());
+    });
 
     // форма отправки заказа
     $('.btn_modal').click(function (e) {
