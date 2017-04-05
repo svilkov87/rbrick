@@ -161,6 +161,7 @@ body{
     width: 80%;
   }
 }
+//wrapp offer
 
 //nav
 .nav{
@@ -233,9 +234,9 @@ body{
 .nav_bottom {
     background: #f7f5f5;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 15px 0;
-    border: 1px solid $border_bott_nav;
+    border: $brdr_def;
   .container {
     .block_logo {
       display: table-cell;
@@ -309,17 +310,28 @@ body{
              color: #000;
              line-height: 75px;
              display: block;
-             @include bradius(50%);
+             @include transition(.1s);
              &:hover{
                color: #fff;
                background: $def_clr_main;
-               @include transition(.2s);
              }
              @include mobile_l{
                line-height: 60px;
              }
            }
-         }
+          .run_show_search{
+            background: #97c6e9;
+            border: 2px solid #fff;
+            color: #ffffff !important;
+            bottom: 8px !important;
+            margin: auto;
+            height: 55px;
+            width: 55px;
+            line-height: 55px !important;
+            @include bradius(50%);
+            @include transition(.1s);
+          }
+        }
          .down_search{
           margin-left: 80px;
           height: 75px;
@@ -424,25 +436,28 @@ body{
   }
 }
 
-
 //sidebar
 .sidebar {
   .side_product {
     text-transform: uppercase;
     margin-bottom: 15px;
+    background: #f7f5f5;
+    padding: 10px;
+    border: $brdr_def;
   }
   .sideb_ul {
-    @include mobile_l{
+    background: #f7f5f5;
+    border: $brdr_def;
+    @include tablet_max{
       display: none;
     }
     .side_li {
       position: relative;
       .a_side_main {
         display: block;
-        padding: 10px 0;
+        padding: 10px;
         text-transform: uppercase;
         color: #000;
-        border-bottom: 1px dashed #ccc;
         &:hover {
           background: $def_clr_main;
           color: #fff;
@@ -505,10 +520,14 @@ body{
   }
   .sideb_ul_mb {
     background: #ccc;
+    display: none;
+    @include tablet_max{
+      display: block;
+    }
     .side_li_mb {
       position: relative;
       .a_side_main_mb {
-        display: block;
+        display: inline-block;
         padding: 10px 0;
         text-transform: uppercase;
         color: #000;
@@ -541,15 +560,14 @@ body{
           display: inline-block;
         }
       }
-      div {
-        // display: none;
+      .mb_desc{
+        display: none;
         top: 0;
-        left: 100%;
-        width: 250px;
+        left: 0;
+        width: 100%;
         z-index: 101010;
         height: auto;
         padding: 10px;
-        position: absolute;
         background: #fff;
         @include mobile_l {
           width: 100%;
@@ -633,5 +651,41 @@ body{
     }
   }
 }
+
+//category
+.category_header{
+  text-transform: uppercase;
+  background: #f7f5f5;
+  padding: 10px;
+  border: $brdr_def;
+  margin-bottom: 15px;
+}
+.wrapp_category{
+  .wrapp_item_cat{
+    height: 150px;
+    border: 1px solid;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    &:hover .hover_rot{
+      width: 100%;
+      height: 150px;
+    }
+    .hover_rot{
+      position: absolute;
+      background: #ccc;
+      width: 0;
+      height: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      //transform: rotate(45deg);
+      @include transition(.2s);
+      }
+    }
+  }
+
 
 

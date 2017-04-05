@@ -138,6 +138,28 @@
                     <li class="side_li"><a href="#" class="a_side_main">Утеплитель</a></li>
                     <li class="side_li"><a href="#" class="a_side_main">Пазогребневые плиты</a></li>
                 </ul>
+                <ul class="sideb_ul_mb">
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Кирпич</a>
+                        <div class="mb_desc">
+                            <span class="side_add_header_mb">Кирпич</span>
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Строительный кирпич</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Облицовочный кирпич</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Блоки</a>
+                        <div class="mb_desc">
+                            <span class="side_add_header_mb">Блоки</span>
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Блоки test</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Блоки test</a></li>
+                            </ul>
+                        </div></li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Сухие смеси</a></li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Утеплитель</a></li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Пазогребневые плиты</a></li>
+                </ul>
             </div>
         </div>
         <div class="col-md-9">
@@ -174,6 +196,22 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="category_header">категории продукции</div>
+            <div class="wrapp_category">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat">
+                            <div class="hover_rot"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat"></div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat"></div>
                     </div>
                 </div>
             </div>

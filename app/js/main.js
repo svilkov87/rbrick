@@ -26,10 +26,12 @@ $(document).ready(function () {
         }, 200);
     });
 
-    //убрать садбар
-    $("#close_sb").click(function () {
-        $(".lk_sidebar").toggleClass('close');
-        $(".lk_wrapp_content").toggleClass('wr_left');
+    //вращающийся линк поиска
+    $(".down_search_field").mouseenter(function () {
+        $("#show_search").addClass('run_show_search');
+    });
+    $('.down_search_field').mouseleave(function(){
+        $("#show_search").removeClass('run_show_search');
     });
 
     // модальное окно ( заказ звонка )
@@ -52,15 +54,11 @@ $(document).ready(function () {
         }
     );
 
-        //аккордеон
-    // $(".sideb_ul_mb div").hide().prevUntil(".side_li_mb").click(function() {
-    //     $(".sideb_ul_mb div").not(this).slideUp();
-    //     $(this).next().not(":visible").slideDown();
-    // });
+    //аккордеон
+    $(".side_li_mb").click(function(){
+            $(this).children('.mb_desc').slideToggle(100);
+        });
 
-        $(".sideb_ul_mb div").click(function() {
-            $(this.hide());
-    });
 
     // форма отправки заказа
     $('.btn_modal').click(function (e) {
