@@ -60,18 +60,14 @@
             <div class="col-md-3 col-sm-3">
                 <div class="row">
                     <div class="block_logo">
-                        <h2>
-                            <span class="red_w">Р</span>усский
-                            <span class="red_w">К</span>ирпич
-                        </h2>
-                        <p class="slogan_logo">Комплексное снабжение строительных объектов</p>
+                        <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/logo_rb_1.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9">
                 <div class="row">
                     <div class="block_nav_info">
-                        <div class="con-md-8 col-sm-8">
+                        <div class="con-md-12 col-sm-12">
                             <div class="wrapp_nav_change">
                                 <div class="nav_inf_search">
                                     <i class="fa fa-search" id="show_search"></i>
@@ -83,14 +79,16 @@
                                     </form>
                                 </div>
                                 <div class="nav_inf_contact">
-                                    <p class="em_p">brr.rk52@gmail.com</p>
-                                    <p class="em">8 950 000 15 12</p>
+                                    <div class="col-md-4">
+                                        <span class="em_p">brr.rk52@gmail.com</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="em">8 950 000 15 12</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="call_link">Заказать звонок</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="con-md-4 col-sm-4">
-                            <div class="call">
-                                <p class="call_link">Заказать звонок</p>
                             </div>
                         </div>
                     </div>
@@ -110,8 +108,8 @@
                         <div class="side_addition_block">
                             <span class="side_add_header">Кирпич</span>
                             <ul class="add_ul">
-                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
-                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Рядовой</a></li>
                             </ul>
                         </div>
                     </li>
@@ -120,8 +118,8 @@
                         <div class="side_addition_block">
                             <span class="side_add_header">Блоки</span>
                             <ul class="add_ul">
-                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
-                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Газобетонные блоки</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Керамические крупноформатные блоки </a></li>
                             </ul>
                         </div>
                     </li>
@@ -130,35 +128,113 @@
                         <div class="side_addition_block">
                             <span class="side_add_header">Смеси</span>
                             <ul class="add_ul">
-                                <li class="add_li"><a href="#" class="a_child_side">Строительный кирпич</a></li>
-                                <li class="add_li"><a href="#" class="a_child_side">Облицовочный кирпич</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side">Решения для декоративной и рядовой кладки</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Решения для облицовки плиткой и камнем</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Фасадные решения</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Решения для выравнивания пола и стен</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Цемент и цементо-песчанные смеси</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li class="side_li"><a href="#" class="a_side_main">Утеплитель</a></li>
-                    <li class="side_li"><a href="#" class="a_side_main">Пазогребневые плиты</a></li>
+                    <li class="side_li"><a href="#" class="a_side_main">Кровельные материалы</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Кровля</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side"> Гибкая черепица</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Металлочерепица</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Профнастил</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Керамическая черепица</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Композитная черепица</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Подкладочные ковры</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Водосточные системы</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Гидроизоляция</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Ветроизоляция</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Пароизоляция</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li"><a href="#" class="a_side_main">Утеплители</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Утеплители</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side"> Базалтовая теплоизоляция</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Экструдированный пенополистирол</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Фасадный пенопласт</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li"><a href="#" class="a_side_main">Благоустройство</a>
+                        <div class="side_addition_block">
+                            <span class="side_add_header">Благоустройство</span>
+                            <ul class="add_ul">
+                                <li class="add_li"><a href="#" class="a_child_side"> Брусчатка</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Бордюры</a></li>
+                                <li class="add_li"><a href="#" class="a_child_side"> Декоративные элементы</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <ul class="sideb_ul_mb">
                     <li class="side_li_mb"><a href="#" class="a_side_main_mb">Кирпич</a>
                         <div class="mb_desc">
-                            <span class="side_add_header_mb">Кирпич</span>
                             <ul class="add_ul_mb">
-                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Строительный кирпич</a></li>
-                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Облицовочный кирпич</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">облицовочный</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">рядовой</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="side_li_mb"><a href="#" class="a_side_main_mb">Блоки</a>
                         <div class="mb_desc">
-                            <span class="side_add_header_mb">Блоки</span>
                             <ul class="add_ul_mb">
-                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Блоки test</a></li>
-                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Блоки test</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Газобетонные блоки</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb">Керамические крупноформатные</a></li>
                             </ul>
                         </div></li>
-                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Сухие смеси</a></li>
-                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Утеплитель</a></li>
-                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Пазогребневые плиты</a></li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Сухие смеси</a>
+                        <div class="mb_desc">
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для декоративной и рядовой кладки</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для облицовки плиткой и камнем</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Фасадные решения</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для выравнивания пола и стен</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Цемент и цементо-песчанные смеси</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Кровельные материалы</a>
+                        <div class="mb_desc">
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Гибкая черепица</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Металлочерепица</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Профнастил</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Керамическая черепица</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Композитная черепица</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Подкладочные ковры</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Водосточные системы</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Гидроизоляция</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Ветроизоляция</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Пароизоляция</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Утеплители</a>
+                        <div class="mb_desc">
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Базалтовая теплоизоляция</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Экструдированный пенополистирол</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Фасадный пенопласт</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side_li_mb"><a href="#" class="a_side_main_mb">Благоустройство</a>
+                        <div class="mb_desc">
+                            <ul class="add_ul_mb">
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Брусчатка</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Бордюры</a></li>
+                                <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Декоративные элементы</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -168,50 +244,64 @@
                     <div class="row">
                         <ul class="bxslider">
                             <li>
-                                <img src="http://www.elitecleaners.co.uk/wp-content/uploads/2012/02/house-cleaning1.jpg">
+                                <img src="http://fmabd.com/images/38.jpg">
                                 <div class="content_slider">
-                                    <h2 class="header_content_slider">Лучший в мире ремонт</h2>
-                                    <p class="inner_slider">Лучший в мире сайт о ремонте...</p>
+                                    <h2 class="header_content_slider">акция</h2>
+                                    <p class="inner_slider">описание акции</p>
                                 </div>
                             </li>
                             <li>
-                                <img src="http://zar-remont.ru/assets/common/11-94bc08e66ddc0fac0edf5f619c5e74e4.jpg">
+                                <img src="http://www.afsdecksandfence.com/wp-content/uploads/2016/04/0357888415A100005A700002-attachment-1-IMG_0936-1024x500.jpg">
                                 <div class="content_slider">
-                                    <h2 class="header_content_slider">Лучшие в мире работники</h2>
-                                    <p class="inner_slider">Лучший в мире Шура</p>
+                                    <h2 class="header_content_slider">Спецпредложение</h2>
+                                    <p class="inner_slider">Описание</p>
                                 </div>
                             </li>
                             <li>
-                                <img src="http://levillagestbarth.com/wp-content/uploads/2016/05/Standard-hotel-bathroom.jpg">
+                                <img src="http://www.ceraland.ru/upload/iblock/dff/1.jpg">
                                 <div class="content_slider">
-                                    <h2 class="header_content_slider">Лучший в мире СэнСэй</h2>
-                                    <p class="inner_slider">Лучший в мире Денис</p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="http://comfortsolutions.com.ua/img/slide-02.jpg">
-                                <div class="content_slider">
-                                    <h2 class="header_content_slider">Много денег получим</h2>
-                                    <p class="inner_slider">Спасибо за работу!</p>
+                                    <h2 class="header_content_slider">Другая акция</h2>
+                                    <p class="inner_slider">описание</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="category_header">категории продукции</div>
+            <div class="category_header">каталог продукции</div>
             <div class="wrapp_category">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-6">
                         <div class="wrapp_item_cat">
-                            <div class="hover_rot"></div>
+                            <!--<div class="hover_rot">-->
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/ecf5969a8e421b3be2b1316c802a146f.jpg" alt="">
+                            <!--</div>-->
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat"></div>
+                        <div class="wrapp_item_cat">
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/7e796439ef90a03018fe1a70c71f1ba0.jpg" alt="">
+                        </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat"></div>
+                        <div class="wrapp_item_cat">
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/11821949033048051_71ce.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat">
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/11821949033048051_71ce1111.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat">
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/118219490330.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="wrapp_item_cat">
+                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/brus.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>

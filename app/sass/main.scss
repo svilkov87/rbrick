@@ -202,15 +202,15 @@ body{
           padding: 0 10px;
           text-transform: uppercase;
           font-size: 14px;
-          color: $navclr;
           &:hover{
-            background: $def_hover_bg;
+            //background: $def_hover_bg;
+            background: $hover_all;
             color: #fff;
-            border-bottom: 2px solid $def_clr_main;
+            @include transition(.2s);
           }
         }
         .a_nav_active{
-          border-bottom: 2px solid $def_clr_main;
+          //border-bottom: 2px solid $def_clr_main;
         }
       }
     }
@@ -232,11 +232,10 @@ body{
 }
 
 .nav_bottom {
-    background: #f7f5f5;
+    background: $nav_btt_bg;
     height: auto;
     margin-bottom: 15px;
     padding: 15px 0;
-    border: $brdr_def;
   .container {
     .block_logo {
       display: table-cell;
@@ -245,14 +244,19 @@ body{
       vertical-align: middle;
       padding: 0 10px;
       @include mobile_l {
-        margin: 0 auto;
         display: block;
         text-align: center;
+      }
+      img{
+        width: 100%;
+        display: none;
+        height: auto;
       }
       h2 {
         text-transform: uppercase;
         font-size: 25px;
         margin-bottom: 5px;
+        color: $navclr;
         @include tablet {
           font-size: 20px;
         }
@@ -267,6 +271,7 @@ body{
         text-transform: uppercase;
         font-size: 13px;
         width: 80%;
+        color: $navclr;
         @include tablet {
           width: 100%;
         }
@@ -307,36 +312,39 @@ body{
              left: 0;
              right: 0;
              margin: auto;
-             color: #000;
+             color: $navclr;
              line-height: 75px;
              display: block;
              @include transition(.1s);
              &:hover{
                color: #fff;
-               background: $def_clr_main;
+               background: $search_hover;
              }
              @include mobile_l{
                line-height: 60px;
              }
            }
           .run_show_search{
-            background: #97c6e9;
-            border: 2px solid #fff;
             color: #ffffff !important;
             bottom: 8px !important;
             margin: auto;
             height: 55px;
             width: 55px;
+            background: $search_hover;
             line-height: 55px !important;
             @include bradius(50%);
             @include transition(.1s);
+            //-webkit-box-shadow: inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
+            //-moz-box-shadow:    inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
+            //box-shadow:         inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
           }
         }
+
          .down_search{
           margin-left: 80px;
           height: 75px;
           background: #bbb;
-          margin-top: -75px;
+          margin-top: -76px;
           @include transition (.3s);
           &:hover{
            margin-top: 0;
@@ -360,76 +368,77 @@ body{
         .nav_inf_contact{
           position: relative;
           margin-left: 80px;
-          background: #fff;
+          background: $nav_btt_bg;
           height: 75px;
           .em_p{
-            position: absolute;
-            top: 25%;
-            left: 15px;
+            line-height: 75px;
             padding-left: 20px;
+            color: $navclr;
+            text-transform: uppercase;
+            text-shadow: $tsh_nbtt;
+            @include mobile_l{
+              display: none;
+            }
             &:before{
               content: "\f003";
-              color: #000;
-              display: inline-block;
-              margin-top: 3px;
+              color: $navclr;
               margin-right: 10px;
               font: normal normal normal 14px/1 FontAwesome;
-              font-size: 12px;
             }
           }
           .em{
-            position: absolute;
-            top: 50%;
-            left: 15px;
+            line-height: 75px;
             padding-left: 20px;
+            color: $navclr;
+            text-transform: uppercase;
+            text-shadow: $tsh_nbtt;
+            @include mobile_l{
+              display: none;
+            }
             &:before{
               content: "\f095";
-              color: #000;
-              display: inline-block;
-              margin-top: 3px;
+              color: $navclr;
               margin-right: 10px;
               font: normal normal normal 14px/1 FontAwesome;
-              font-size: 12px;
             }
           }
-        }
-      }
-    }
-    .call {
-      @include mobile_l {
-        float: none;
-        margin: 0 auto;
-      }
-      .call_link {
-        padding-left: 35px;
-        line-height: 75px;
-        color: #000;
-        text-transform: uppercase;
-        position: relative;
-        cursor: pointer;
-        @include tablet_max{
-          font-size: 12px;
-        }
-        @include mobile_s{
-          padding-left: 40px;
-        }
-        &:after {
-          content: "\f098";
-          color: $def_clr_main;
-          display: inline-block;
-          position: absolute;
-          top: 29px;
-          left: 10px;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: inherit;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          @include mobile_s{
-            left: 16px;
-          }
-        }
-        &:hover{
-          color: $def_clr_main;
+          .call_link {
+              padding: 0 35px;
+              display: inline-block;
+              line-height: 75px;
+              color: $navclr;
+              text-transform: uppercase;
+              position: relative;
+              cursor: pointer;
+            text-shadow: $tsh_nbtt;
+              @include tablet_max{
+                font-size: 12px;
+              }
+              @include mobile_s{
+                padding-left: 40px;
+              }
+              &:after {
+                content: "\f098";
+                color: $navclr;
+                display: inline-block;
+                position: absolute;
+                top: 29px;
+                left: 10px;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                @include mobile_s{
+                  left: 16px;
+                }
+              }
+              &:hover{
+                //background: $hover_all;
+                //text-shadow: 1px 1px 55px rgba(255, 255, 255, 1);
+                text-shadow:0px 5px 30px #f6f6ed, 4px -3px 30px #fff;
+                @include transition(.1s);
+              }
+            }
         }
       }
     }
@@ -489,13 +498,14 @@ body{
       .side_addition_block {
         display: none;
         top: 0;
-        left: 100%;
+        left: 103%;
         width: 250px;
         z-index: 101010;
         height: auto;
         padding: 10px;
         position: absolute;
         background: #fff;
+        border: $brdr_def;
         @include mobile_l {
           width: 100%;
           z-index: 1010;
@@ -514,18 +524,22 @@ body{
         .a_child_side {
           padding: 10px;
           display: inline-block;
+          &:hover{
+            color: $hover_all;
+          }
         }
       }
     }
   }
   .sideb_ul_mb {
-    background: #ccc;
     display: none;
+    margin-bottom: 15px;
     @include tablet_max{
       display: block;
     }
     .side_li_mb {
       position: relative;
+      margin-left: 10px;
       .a_side_main_mb {
         display: inline-block;
         padding: 10px 0;
@@ -553,7 +567,7 @@ body{
           text-rendering: auto;
           -webkit-font-smoothing: antialiased;
           @include mobile_s {
-            left: 16px;
+            display: none;
           }
         }
         @include mobile_l{
@@ -660,32 +674,23 @@ body{
   border: $brdr_def;
   margin-bottom: 15px;
 }
-.wrapp_category{
-  .wrapp_item_cat{
-    height: 150px;
-    border: 1px solid;
+
+.wrapp_category {
+  .wrapp_item_cat {
+    height: auto;
+    border: $brdr_def;
+    padding: 20px;
     margin-bottom: 30px;
     overflow: hidden;
     position: relative;
-    &:hover .hover_rot{
-      width: 100%;
+    img {
       height: 150px;
-    }
-    .hover_rot{
-      position: absolute;
-      background: #ccc;
-      width: 0;
-      height: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-      //transform: rotate(45deg);
-      @include transition(.2s);
-      }
+      width: 90%;
+      display: block;
+      margin: 0 auto;
     }
   }
+}
 
 
 

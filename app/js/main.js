@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    //выпадающий доп меню в лк (навигация)
-    $("#showNav").click(function () {
-        $(".lk_ul_child").slideToggle(100);
+    //выпадающее меню навигация
+    $("#fa-align-justify").click(function () {
+        $(".ul_nav").slideToggle(100);
     });
 
     //показываем форму поиска
