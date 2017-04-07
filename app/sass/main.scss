@@ -188,7 +188,7 @@ body{
         display: none;
         position: absolute;
         background: $navbg;
-        width: 240px;
+        width: 100%;
         z-index: 9;
       }
       .li_nav{
@@ -200,6 +200,7 @@ body{
           line-height: 40px;
           display: block;
           padding: 0 10px;
+          color: $nav_top_clr;
           text-transform: uppercase;
           font-size: 14px;
           &:hover{
@@ -223,7 +224,10 @@ body{
       text-transform: uppercase;
       padding: 0 10px;
       color: #fff;
-      background: $def_clr_main;
+      background: $nav_btt_bg;
+      &:hover{
+        background: #FDCF00;
+      }
       @include mobile_l{
         font-size: 14px;
       }
@@ -240,9 +244,9 @@ body{
     .block_logo {
       display: table-cell;
       width: 260px;
-      height: 80px;
+      height: $h_nav_btt;
       vertical-align: middle;
-      padding: 0 10px;
+      // padding: 0 10px;
       @include mobile_l {
         display: block;
         text-align: center;
@@ -289,14 +293,14 @@ body{
       }
       .wrapp_nav_change{
         overflow: hidden;
-        height: 75px;
+        height: $h_nav_btt;
         @include mobile_l{
           height: 60px;
         }
         .nav_inf_search{
            position: absolute;
-           height: 75px;
-           width: 75px;
+           height: $h_nav_btt;
+           width: $h_nav_btt;
            color: #fff;
            text-align: center;
            &:hover + .down_search{
@@ -313,7 +317,7 @@ body{
              right: 0;
              margin: auto;
              color: $navclr;
-             line-height: 75px;
+             line-height: $lh_nav_btt;
              display: block;
              @include transition(.1s);
              &:hover{
@@ -326,35 +330,31 @@ body{
            }
           .run_show_search{
             color: #ffffff !important;
-            bottom: 8px !important;
             margin: auto;
-            height: 55px;
-            width: 55px;
+            height: $h_nav_btt;
+            width: $h_nav_btt;
             background: $search_hover;
-            line-height: 55px !important;
+            line-height: $h_nav_btt !important;
             @include bradius(50%);
             @include transition(.1s);
-            //-webkit-box-shadow: inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
-            //-moz-box-shadow:    inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
-            //box-shadow:         inset 0px 0px 5px 0px rgba(255, 255, 255, 1);
           }
         }
 
          .down_search{
           margin-left: 80px;
-          height: 75px;
+          height: 59px;
           background: #bbb;
-          margin-top: -76px;
+          margin-top: -59px;
           @include transition (.3s);
           &:hover{
            margin-top: 0;
          }
            @include mobile_l{
-             height: 60px;
+             height: 59px;
            }
          .down_form_search{
           .down_search_field{
-            line-height: 75px;
+            line-height: $lh_nav_btt;
             width: 100%;
             border: none;
             outline: none;
@@ -369,9 +369,9 @@ body{
           position: relative;
           margin-left: 80px;
           background: $nav_btt_bg;
-          height: 75px;
+          height: $h_nav_btt;
           .em_p{
-            line-height: 75px;
+            line-height: $lh_nav_btt;;
             padding-left: 20px;
             color: $navclr;
             text-transform: uppercase;
@@ -387,7 +387,7 @@ body{
             }
           }
           .em{
-            line-height: 75px;
+            line-height: $lh_nav_btt;
             padding-left: 20px;
             color: $navclr;
             text-transform: uppercase;
@@ -405,7 +405,7 @@ body{
           .call_link {
               padding: 0 35px;
               display: inline-block;
-              line-height: 75px;
+              line-height: $lh_nav_btt;
               color: $navclr;
               text-transform: uppercase;
               position: relative;
@@ -422,7 +422,7 @@ body{
                 color: $navclr;
                 display: inline-block;
                 position: absolute;
-                top: 29px;
+                top: 22px;
                 left: 10px;
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: inherit;
@@ -679,15 +679,64 @@ body{
   .wrapp_item_cat {
     height: auto;
     border: $brdr_def;
-    padding: 20px;
+    // padding: 20px;
     margin-bottom: 30px;
     overflow: hidden;
     position: relative;
+    &:hover .cat_hover{
+     opacity: 1;
+    }
+    &:hover .cat_descr{
+     padding-top: 25px;
+    }
+    &:hover .cat_name{
+     opacity: 0;
+    }
+    &:hover .fade_in_desc{
+     left: 0;
+    }
+    .cat_hover{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.5);
+      padding-top: 20px;
+      text-align: center;
+      opacity: 0;
+      @include transition(.25s);
+      .cat_descr{
+        @include transition(.25s);
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
     img {
-      height: 150px;
-      width: 90%;
-      display: block;
-      margin: 0 auto;
+      width: 100%;
+    }
+    .cat_name{
+      position: absolute;
+      // top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      @include transition(.25s);
+    }
+    .fade_in_desc{
+      position: absolute;
+      color: #fff;
+      left: 100%;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: rgba(0,0,0,.5);
+      text-align: center;
+      @include transition(.15s);
     }
   }
 }

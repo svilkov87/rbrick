@@ -270,40 +270,80 @@
             </div>
             <div class="category_header">каталог продукции</div>
             <div class="wrapp_category">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <!--<div class="hover_rot">-->
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/ecf5969a8e421b3be2b1316c802a146f.jpg" alt="">
-                            <!--</div>-->
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">кирпич</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">блоки</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">сухие смеси</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">кровля</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">утеплители</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="wrapp_item_cat">
+                                    <div class="cat_hover">
+                                        <a href="#">
+                                            <p class="cat_descr">посмотреть</p>
+                                        </a>
+                                    </div>
+                                    <img src="http://placehold.it/200/11e883/ffffff" alt="alt">
+                                    <div class="cat_name">благоустройство</div>
+                                    <div class="fade_in_desc"> + 1000 наименований</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/7e796439ef90a03018fe1a70c71f1ba0.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/11821949033048051_71ce.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/11821949033048051_71ce1111.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/118219490330.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="wrapp_item_cat">
-                            <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/main_cat/brus.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
