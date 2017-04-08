@@ -174,7 +174,7 @@ body{
     #fa-align-justify{
       line-height: 40px;
       padding: 0 10px;
-      color: #000;
+      color: $nav_top_clr;
       display: none;
       @include mobile_l{
         display: block;
@@ -205,8 +205,8 @@ body{
           font-size: 14px;
           &:hover{
             //background: $def_hover_bg;
-            background: $hover_all;
-            color: #fff;
+            background: $nav_btt_bg;
+            color: $nav_top_clr_h;
             @include transition(.2s);
           }
         }
@@ -223,13 +223,15 @@ body{
       line-height: 40px;
       text-transform: uppercase;
       padding: 0 10px;
-      color: #fff;
+      color: $nav_top_clr_h;
       background: $nav_btt_bg;
       &:hover{
-        background: #FDCF00;
+        background: $nav_btt_bg;
       }
       @include mobile_l{
         font-size: 14px;
+        background: $navbg;
+        color: $nav_top_clr;
       }
     }
   }
@@ -238,7 +240,6 @@ body{
 .nav_bottom {
     background: $nav_btt_bg;
     height: auto;
-    margin-bottom: 15px;
     padding: 15px 0;
   .container {
     .block_logo {
@@ -246,15 +247,15 @@ body{
       width: 260px;
       height: $h_nav_btt;
       vertical-align: middle;
-      // padding: 0 10px;
+      text-align: center;
       @include mobile_l {
         display: block;
-        text-align: center;
+        text-align: left;
+        margin-left: 15px;
       }
       img{
-        width: 100%;
-        display: none;
-        height: auto;
+        margin: 0 auto;
+        height: 60px;
       }
       h2 {
         text-transform: uppercase;
@@ -316,7 +317,7 @@ body{
              left: 0;
              right: 0;
              margin: auto;
-             color: $navclr;
+             color: $search_hover;
              line-height: $lh_nav_btt;
              display: block;
              @include transition(.1s);
@@ -333,7 +334,7 @@ body{
             margin: auto;
             height: $h_nav_btt;
             width: $h_nav_btt;
-            background: $search_hover;
+            background: $search_hover_circle;
             line-height: $h_nav_btt !important;
             @include bradius(50%);
             @include transition(.1s);
@@ -375,7 +376,7 @@ body{
             padding-left: 20px;
             color: $navclr;
             text-transform: uppercase;
-            text-shadow: $tsh_nbtt;
+            //text-shadow: $tsh_nbtt;
             @include mobile_l{
               display: none;
             }
@@ -391,7 +392,7 @@ body{
             padding-left: 20px;
             color: $navclr;
             text-transform: uppercase;
-            text-shadow: $tsh_nbtt;
+            //text-shadow: $tsh_nbtt;
             @include mobile_l{
               display: none;
             }
@@ -403,14 +404,18 @@ body{
             }
           }
           .call_link {
-              padding: 0 35px;
+              border: 1px solid $navbg;
+              padding-left: 35px;
               display: inline-block;
-              line-height: $lh_nav_btt;
-              color: $navclr;
+              line-height: 50px;
+              margin-top: 8px;
+              height: 50px;
+              width: 100%;
+              color: $navbg;
               text-transform: uppercase;
               position: relative;
               cursor: pointer;
-            text-shadow: $tsh_nbtt;
+              @include bradius(5px);
               @include tablet_max{
                 font-size: 12px;
               }
@@ -419,10 +424,10 @@ body{
               }
               &:after {
                 content: "\f098";
-                color: $navclr;
+                color: $navbg;
                 display: inline-block;
                 position: absolute;
-                top: 22px;
+                top: 17px;
                 left: 10px;
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: inherit;
@@ -433,10 +438,13 @@ body{
                 }
               }
               &:hover{
-                //background: $hover_all;
-                //text-shadow: 1px 1px 55px rgba(255, 255, 255, 1);
-                text-shadow:0px 5px 30px #f6f6ed, 4px -3px 30px #fff;
-                @include transition(.1s);
+                border: 1px solid $search_hover;
+                color: $search_hover;
+                @include transition(.2s);
+              }
+              &:hover::after{
+                color: $search_hover;
+                @include transition(.2s);
               }
             }
         }
@@ -444,7 +452,18 @@ body{
     }
   }
 }
+hr{
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
 
+//bread scrumbs
+.bread{
+  padding: 10px;
+  display: inline-block;
+}
 //sidebar
 .sidebar {
   .side_product {
@@ -455,13 +474,14 @@ body{
     border: $brdr_def;
   }
   .sideb_ul {
-    background: #f7f5f5;
     border: $brdr_def;
+    @include bradius(3px);
     @include tablet_max{
       display: none;
     }
     .side_li {
       position: relative;
+      border-bottom: $brdr_def;
       .a_side_main {
         display: block;
         padding: 10px;
@@ -515,10 +535,21 @@ body{
         }
         .side_add_header {
           display: inline-block;
-          padding: 10px;
+          padding: 10px 20px;
           text-transform: uppercase;
+          position: relative;
           @include mobile_l {
             display: none;
+          }
+          &:before{
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            @include bradius(50%);
+            background: $search_hover;
+            left: 10px;
+            top: 15px;
           }
         }
         .a_child_side {
@@ -526,6 +557,7 @@ body{
           display: inline-block;
           &:hover{
             color: $hover_all;
+            text-decoration: underline;
           }
         }
       }
