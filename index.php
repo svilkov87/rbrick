@@ -20,6 +20,17 @@
             speed: 500,             // длительность перехода слайда в м-сек
             useCSS: false           // CSS переходы
         });
+
+            //            news
+            $('.bx_news').bxSlider({
+                mode: 'vertical',
+                tickerHover: false,
+                responsive: true,
+                controls: false,
+                auto: true,
+                pager: false,
+                slideMargin: 5
+            });
 		});
 	</script>
 	<link href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
@@ -42,10 +53,28 @@
                 <i class="fa fa-align-justify" id="fa-align-justify" aria-hidden="true"></i>
                 <ul class="ul_nav">
                     <li class="li_nav"><a href="#" class="a_nav_active">Главная</a></li>
-                    <li class="li_nav"><a href="#">О компании</a></li>
-                    <li class="li_nav"><a href="#">Каталог</a></li>
-                    <li class="li_nav"><a href="#">Доставка</a></li>
-                    <li class="li_nav"><a href="#">контакты</a></li>
+                    <li class="li_nav"><a href="#">О компании</a>
+                        <ul class="child_ul">
+                            <li class="child_li"><a href="#">новости</a></li>
+                            <li class="child_li"><a href="#">наши объекты</a></li>
+                            <li class="child_li"><a href="#">сертификаты</a></li>
+                        </ul>
+                    </li>
+                    <li class="li_nav"><a href="#">покупателю</a>
+                        <ul class="child_ul">
+                            <li class="child_li"><a href="#">как заказать</a></li>
+                            <li class="child_li"><a href="#">оплата</a></li>
+                            <li class="child_li"><a href="#">доставка</a></li>
+                            <li class="child_li"><a href="#">обмен и возврат</a></li>
+                            <li class="child_li"><a href="#">контроль качества</a></li>
+                        </ul>
+                    </li>
+                    <li class="li_nav"><a href="#">контакты</a>
+                        <ul class="child_ul">
+                            <li class="child_li"><a href="#">реквизиты</a></li>
+                            <li class="child_li"><a href="#">схема проезда</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="nav_right">
@@ -102,9 +131,9 @@
 </div>
 <div class="container">
     <div class="bread">
-        <span>главная</span>/
-        <span>каталог</span>/
-        <span>кирпич</span>/
+        <span>главная</span> /
+        <span>каталог</span> /
+        <span>кирпич</span> /
     </div>
 </div>
 <div class="container">
@@ -247,6 +276,23 @@
                     </li>
                 </ul>
             </div>
+            <div class="news">
+                <div class="news_head">
+                    <p>новости компании</p>
+                </div>
+                <ul class="bx_news">
+                    <li>новость1
+                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
+                    </li>
+                    <li>новость2
+                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
+                    </li>
+                    <li>
+                        новость3
+                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-9">
             <div class="wrapp_slider">
@@ -355,6 +401,38 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="nav_left">
+                    <p class="nav_head">Навигация</p>
+                    <ul class="foo_ul_nav">
+                        <li class="foo_li_nav"><a href="#" class="a_nav_active">Главная</a></li>
+                        <li class="foo_li_nav"><a href="#">О компании</a></li>
+                        <li class="foo_li_nav"><a href="#">Наши объекты</a></li>
+                        <li class="foo_li_nav"><a href="#">Доставка</a></li>
+                        <li class="foo_li_nav"><a href="#">контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="foo_customer">
+                    <p class="cust_head">Покупателю</p>
+                    <ul class="cust">
+                        <li class="cust_li"><a href="#">Как заказть</a></li>
+                        <li class="cust_li"><a href="#">Оплата</a></li>
+                        <li class="cust_li"><a href="#">Доставка</a></li>
+                        <li class="cust_li"><a href="#">Обмен и возврат</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 </div>

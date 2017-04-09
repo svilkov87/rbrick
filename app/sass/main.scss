@@ -5,6 +5,7 @@
 
 body{
   font-family: 'Roboto Condensed', sans-serif !important;
+  background: #fafafa;
   a{
     text-decoration: none;
   }
@@ -203,15 +204,35 @@ body{
           color: $nav_top_clr;
           text-transform: uppercase;
           font-size: 14px;
+          position: relative;
           &:hover{
             //background: $def_hover_bg;
-            background: $nav_btt_bg;
-            color: $nav_top_clr_h;
+            background: $offer_online_hover;
+            color: $nav_top_clr;
             @include transition(.2s);
           }
         }
-        .a_nav_active{
-          //border-bottom: 2px solid $def_clr_main;
+        .child_ul{
+          display: none;
+          width: 200px;
+          z-index: 99;
+          position: absolute;
+          background: $offer_online_hover;
+          @include mobile_l{
+            position: static;
+          }
+          .child_li{
+            a{
+              color: $nav_top_clr;
+              font-size: 13px;
+              //padding: 5px 10px;
+              &:hover{
+                background: $offer_online;
+                color: $nav_top_clr;
+                @include transition(.2s);
+              }
+            }
+          }
         }
       }
     }
@@ -223,10 +244,10 @@ body{
       line-height: 40px;
       text-transform: uppercase;
       padding: 0 10px;
-      color: $nav_top_clr_h;
-      background: $nav_btt_bg;
+      color: #fff;
+      background: $offer_online;
       &:hover{
-        background: $nav_btt_bg;
+        background: $offer_online_hover;
       }
       @include mobile_l{
         font-size: 14px;
@@ -461,15 +482,21 @@ hr{
 
 //bread scrumbs
 .bread{
+  border: $brdr_def;
+  background: $nav_btt_bg;
   padding: 10px;
-  display: inline-block;
+  margin: 10px 0;
+  display: block;
+  span{
+    color: $navclr;
+  }
 }
 //sidebar
 .sidebar {
   .side_product {
     text-transform: uppercase;
     margin-bottom: 15px;
-    background: #f7f5f5;
+    background: $sb_items;
     padding: 10px;
     border: $brdr_def;
   }
@@ -486,6 +513,7 @@ hr{
         display: block;
         padding: 10px;
         text-transform: uppercase;
+        background: $sb_items;
         color: #000;
         &:hover {
           background: $def_clr_main;
@@ -638,6 +666,26 @@ hr{
     }
   }
 }
+//news
+.news{
+  margin-top: 15px;
+  background: #fff;
+  border: $brdr_def;
+  .news_head{
+    padding: 10px;
+    background: $navbg;
+    p{
+      color: $nav_top_clr;
+    }
+  }
+  .bx_news{
+    padding: 15px;
+    .img_news{
+      width: 70px;
+      @include bradius(50%);
+    }
+  }
+}
 
 //slider
 .wrapp_slider {
@@ -701,7 +749,7 @@ hr{
 //category
 .category_header{
   text-transform: uppercase;
-  background: #f7f5f5;
+  background: $sb_items;
   padding: 10px;
   border: $brdr_def;
   margin-bottom: 15px;
@@ -772,6 +820,85 @@ hr{
     }
   }
 }
+
+//footer
+.footer {
+  background: $foot_bg;
+  height: auto;
+  padding: 20px 0;
+  .nav_head{
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .nav_left {
+    @include mobile_l {
+      display: inline-block;
+    }
+    .foo_ul_nav {
+      @include large {
+        display: block;
+      }
+      @include mobile_l {
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+      }
+      .foo_li_nav {
+        @include mobile_l {
+          float: none;
+        }
+        a {
+          display: inline-block;
+          padding: 10px;
+          color: $foot_clr;
+          text-transform: uppercase;
+          font-size: 13px;
+          &:hover {
+            @include transition(.2s);
+          }
+        }
+      }
+    }
+  }
+  .foo_customer{
+    .cust_head{
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .cust {
+      @include large {
+        display: block;
+      }
+      @include mobile_l {
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+      }
+      .cust_li {
+        @include mobile_l {
+          float: none;
+        }
+        a {
+          display: inline-block;
+          padding: 10px;
+          color: $foot_clr;
+          text-transform: uppercase;
+          font-size: 13px;
+          &:hover {
+            @include transition(.2s);
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 

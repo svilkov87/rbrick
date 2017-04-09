@@ -54,6 +54,18 @@ $(document).ready(function () {
         }
     );
 
+    //могоуровневое меню верхний nav
+    $('.li_nav').hover(
+        function () {
+            $('ul:first', this).fadeIn(150);
+            $(this).css("background" , "#4a9dc6");
+        },
+        function () {
+            $('ul:first', this).fadeOut(10);
+            $(this).css("background" , "#59b8e8");
+        }
+    );
+
     //аккордеон
     $(".side_li_mb").click(function(){
             $(this).children('.mb_desc').slideToggle(100);
