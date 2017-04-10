@@ -28,6 +28,9 @@
                 responsive: true,
                 controls: false,
                 auto: true,
+                speed: 2000,
+                pause: 6000,
+                minSlides: 2,
                 pager: false,
                 slideMargin: 5
             });
@@ -37,15 +40,7 @@
 </head>
 <body>
 <?php include("include/modal.php");?>
-<div class="bg_offer"></div>
-<div class="wrapp_offer_online">
-    <span class="close_offer">&times;</span>
-    <div class="wr_off_inner">
-        <div class="offer_header">
-            <span class="span_offer">Расчет стоимости он-лайн</span>
-        </div>
-    </div>
-</div>
+<?php include("include/online_offer.php");?>
 <div class="nav">
     <div class="container">
         <div class="row">
@@ -278,18 +273,63 @@
             </div>
             <div class="news">
                 <div class="news_head">
-                    <p>новости компании</p>
+                    <p>Новостной блок компании</p>
                 </div>
                 <ul class="bx_news">
-                    <li>новость1
-                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
-                    </li>
-                    <li>новость2
-                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
+                    <li>
+                        <div class="wrapp_news">
+                            <p class="news_p">Новость №1</p>
+                            <a href="#">
+                                <p class="news_descr">Описание данной новости и ссылка на полный раздел...</p>
+                            </a>
+                            <div class="date">
+                                01.01.2017
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        новость3
-                        <!--<img class="img_news" src="http://placehold.it/100/ccc/ffffff" />-->
+                        <div class="wrapp_news">
+                            <p class="news_p">Новость №2</p>
+                            <a href="#">
+                                <p class="news_descr">Описание данной новости и ссылка на полный раздел...</p>
+                            </a>
+                            <div class="date">
+                                01.01.2017
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapp_news">
+                            <p class="news_p">Новость №3</p>
+                            <a href="#">
+                                <p class="news_descr">Описание данной новости и ссылка на полный раздел...</p>
+                            </a>
+                            <div class="date">
+                                01.01.2017
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapp_news">
+                            <p class="news_p">Новость №4</p>
+                            <a href="#">
+                                <p class="news_descr">Описание данной новости и ссылка на полный раздел...</p>
+                            </a>
+                            <div class="date">
+                                01.01.2017
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapp_news">
+                            <p class="news_p">Новость №5</p>
+                            <a href="#">
+                                <p class="news_descr">Описание данной новости и ссылка на полный раздел...</p>
+                            </a>
+                            <div class="date">
+                                01.01.2017
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -299,13 +339,6 @@
                 <div class="container-fluid">
                     <div class="row">
                         <ul class="bxslider">
-                            <!--<li>-->
-                            <!--<img src="img/sliders/act1.jpg">-->
-                            <!--<div class="content_slider">-->
-                            <!--<h2 class="header_content_slider">акция</h2>-->
-                            <!--<p class="inner_slider">описание акции</p>-->
-                            <!--</div>-->
-                            <!--</li>-->
                             <li>
                                 <img src="http://placehold.it/450x150/9aafc2/ffffff">
                                 <div class="content_slider">

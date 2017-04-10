@@ -4,6 +4,9 @@ $(document).ready(function () {
         $(".ul_nav").slideToggle(100);
     });
 
+    //иниц jqurey style forms
+    // $("#offer_online_form select").styler();
+
     //показываем форму поиска
     $("#show_search").click(function () {
         $(".form_search").addClass("slide_search");
@@ -58,11 +61,13 @@ $(document).ready(function () {
     $('.li_nav').hover(
         function () {
             $('ul:first', this).fadeIn(150);
-            $(this).css("background" , "#4a9dc6");
+            // $(this).css("background" , "#4a9dc6");
+            $(this).css("background" , "#73919f");
         },
         function () {
             $('ul:first', this).fadeOut(10);
-            $(this).css("background" , "#59b8e8");
+            // $(this).css("background" , "#59b8e8");
+            $(this).css("background" , "#73919f");
         }
     );
 
@@ -72,33 +77,37 @@ $(document).ready(function () {
         });
 
 
-    // форма отправки заказа
-    $('.btn_modal').click(function (e) {
+    // форма отправки онлайн - предложения
+    $('#btn_online').click(function (e) {
         e.preventDefault();
-        var name = $('#name').val(),
-            s_name = $('#s_name').val(),
-            field = $('#modal_field').val();
+        var type = $('#type_of_client').val(),
+            delivery = $('#delivery').val(),
+            name_data = $('#name_data').val(),
+            ad_data = $('#adress_data').val(),
+            contacts_data = $('#contacts_data').val(),
+            text_field = $('#field_txt').val();
 
-        if (name == "" || s_name == "" || field == "") {
-            $('.err_block').css("display", "block");
+        if ( name_data == "" ) {
+            // $('.err_block').css("display", "block");
+            alert("не все поля заполнены!");
         }
-        else {
-            $('.err_block').css("display", "none");
-            $.ajax({
-                url: "../../ajax/upload.php",
-                type: "POST",
-                data: $('.myform').serialize(),
-                dataType: "html"
-            }).done(function () {
-                // $('#myModlal').css("display" , "none");
-                $('.modal_forms').css("display", "none");
-                $('.modal_confirm').css("display", "block");
-                // alert('data');
-            });
-        }
-        $('#name, #s_name, #modal_field').focus(function () {
-            $('.err_block').css("display", "none");
-        });
+        // else {
+        //     $('.err_block').css("display", "none");
+        //     $.ajax({
+        //         url: "../../ajax/upload.php",
+        //         type: "POST",
+        //         data: $('.myform').serialize(),
+        //         dataType: "html"
+        //     }).done(function () {
+        //         // $('#myModlal').css("display" , "none");
+        //         $('.modal_forms').css("display", "none");
+        //         $('.modal_confirm').css("display", "block");
+        //         // alert('data');
+        //     });
+        // }
+        // $('#name, #s_name, #modal_field').focus(function () {
+        //     $('.err_block').css("display", "none");
+        // });
     });
 
     //Плавный скролл до блока .div по клику на .scroll

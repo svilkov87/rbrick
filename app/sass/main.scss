@@ -139,18 +139,55 @@ body{
   z-index: 999999;
   .close_offer{
     position: absolute;
-    top: 8px;
-    left: 15px;
+    top: 15px;
+    left: 20px;
     font-size: 25px;
     cursor: pointer;
+    color: #fff;
   }
   .wr_off_inner{
-    width: 90%;
     margin: 0 auto;
     padding: 10px;
     .offer_header{
-      padding: 3px;
+      padding: 10px;
       text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      background: $search_hover;
+    }
+    .offer_body{
+      margin: 15px auto;
+      overflow: hidden;
+      height: 100vh;
+      #offer_online_form{
+        .lable{
+          padding-bottom: 10px;
+        }
+        select{
+          outline: none;
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          @include bradius(3px);
+          width: 100%;
+        }
+        input{
+          outline: none;
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          @include bradius(3px);
+          width: 100%;
+        }
+        #field_txt{
+          outline: none;
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          @include bradius(3px);
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -425,14 +462,14 @@ body{
             }
           }
           .call_link {
-              border: 1px solid $navbg;
+              border: 1px solid $search_hover;
               padding-left: 35px;
               display: inline-block;
               line-height: 50px;
               margin-top: 8px;
               height: 50px;
               width: 100%;
-              color: $navbg;
+              color: $search_hover;
               text-transform: uppercase;
               position: relative;
               cursor: pointer;
@@ -445,7 +482,7 @@ body{
               }
               &:after {
                 content: "\f098";
-                color: $navbg;
+                color: $search_hover;
                 display: inline-block;
                 position: absolute;
                 top: 17px;
@@ -459,12 +496,12 @@ body{
                 }
               }
               &:hover{
-                border: 1px solid $search_hover;
-                color: $search_hover;
+                border: 1px solid $navbg;
+                color: $navbg;
                 @include transition(.2s);
               }
               &:hover::after{
-                color: $search_hover;
+                color: $navbg;
                 @include transition(.2s);
               }
             }
@@ -674,16 +711,41 @@ hr{
   .news_head{
     padding: 10px;
     background: $navbg;
-    p{
-      color: $nav_top_clr;
-    }
+    color: $nav_top_clr;
   }
   .bx_news{
-    padding: 15px;
-    .img_news{
-      width: 70px;
-      @include bradius(50%);
+    //padding: 15px;
+    li{
+      .wrapp_news{
+        padding: 10px;
+        min-height: 100px;
+        position: relative;
+        .news_p{
+          color: #000;
+        }
+        a{
+          color: $search_hover;
+          &:hover{
+            text-decoration: underline;
+          }
+          .news_descr{
+            padding: 10px 0;
+            min-height: 130px;
+          }
+        }
+        .date{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          //padding: 10px;
+          font-size: 14px;
+          //background: #ccc;
+        }
+      }
     }
+  }
+  .bx-wrapper{
+    margin-bottom: 0 !important;
   }
 }
 

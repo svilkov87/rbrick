@@ -1,2 +1,4 @@
 # no access
 node_modules/
+
+include/connection.php

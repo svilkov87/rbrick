@@ -4,5 +4,5 @@
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/animate.css">
-	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-914dc5a37f.css">
+	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-f83320a896.css">
 	<script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery/jquery-1.11.1.min.js"></script>
