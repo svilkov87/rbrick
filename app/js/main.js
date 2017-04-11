@@ -62,12 +62,12 @@ $(document).ready(function () {
         function () {
             $('ul:first', this).fadeIn(150);
             // $(this).css("background" , "#4a9dc6");
-            $(this).css("background" , "#73919f");
+            $(this).css("background" , "#a62828");
         },
         function () {
             $('ul:first', this).fadeOut(10);
             // $(this).css("background" , "#59b8e8");
-            $(this).css("background" , "#73919f");
+            $(this).css("background" , "#db2d2d");
         }
     );
 
@@ -87,27 +87,24 @@ $(document).ready(function () {
             contacts_data = $('#contacts_data').val(),
             text_field = $('#field_txt').val();
 
-        if ( name_data == "" ) {
+        if ( type == "" || delivery == "" || name_data == "" || ad_data == "" || contacts_data == "") {
             // $('.err_block').css("display", "block");
             alert("не все поля заполнены!");
         }
-        // else {
-        //     $('.err_block').css("display", "none");
-        //     $.ajax({
-        //         url: "../../ajax/upload.php",
-        //         type: "POST",
-        //         data: $('.myform').serialize(),
-        //         dataType: "html"
-        //     }).done(function () {
-        //         // $('#myModlal').css("display" , "none");
-        //         $('.modal_forms').css("display", "none");
-        //         $('.modal_confirm').css("display", "block");
-        //         // alert('data');
-        //     });
-        // }
-        // $('#name, #s_name, #modal_field').focus(function () {
-        //     $('.err_block').css("display", "none");
-        // });
+        else {
+            $.ajax({
+                url: "../../ajax/upload_online_offers.php",
+                type: "POST",
+                data: $('#offer_online_form').serialize(),
+                dataType: "html"
+            }).done(function () {
+                $("#offer_online_form").replaceWith("<div class='offer_done'>Ваш запрос принят, мы свяжемся с Вами в ближайшее время!</div>");
+                setTimeout (function(){
+                    $(".wrapp_offer_online").removeClass("open");
+                    $(".bg_offer").css("display", "none");
+                }, 4000);
+            });
+        }
     });
 
     //Плавный скролл до блока .div по клику на .scroll

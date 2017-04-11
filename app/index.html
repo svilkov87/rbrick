@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/main-f83320a896.css">
+	<link rel="stylesheet" href="css/main-a884f5d312.css">
 	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
 	<script src="libs/jquery.bxslider/jquery.bxslider.min.js"></script>
 	<script>
@@ -19,7 +19,7 @@
   	        mode: 'fade',           // тип перехода между слайдами может быть 'horizontal', 'vertical', 'fade'
             captions: true,         // отображение title
             easing: 'easeInOutQuad',// анимация слайда
-            controls: true,         // отображение стрелки - вперед, назад
+            controls: false,         // отображение стрелки - вперед, назад
             startSlide: 0,          // Показ начнется с заданного слайда
             infiniteLoop: true,     // показывать первый слайд за последним 
             auto: true,             // сделать автоматический переход
@@ -97,21 +97,21 @@
                 <form action="" id="offer_online_form">
                     <div class="col-md-6">
                         <p class="lable">Вы являетесь</p>
-                        <select name="offer_select" id="type_of_client">
+                        <select name="offer_type" id="type_of_client">
                             <option value="1">Физическим лицом</option>
                             <option value="2">Юридическим лицом</option>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <p class="lable">Доставка</p>
-                        <select name="offer_select" id="delivery">
+                        <select name="offer_delivery" id="delivery">
                             <option value="1">Доставка</option>
                             <option value="2">Самовывоз</option>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <p class="lable">ФИО</p>
-                        <input type="text" name="name" id="name_data">
+                        <input type="text" name="client_name" id="name_data">
                     </div>
                     <div class="col-md-6">
                         <p class="lable">Адрес доставки</p>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="col-md-12">
                         <p class="lable">Интересующая Вас продукция и количество</p>
-                        <textarea name="text" id="field_txt" cols="30" rows="10"></textarea>
+                        <textarea name="offer_message" id="field_txt" cols="30" rows="10"></textarea>
                         <input type="submit"  id="btn_online" name="send_online_offer" value="Получить запрос он-лайн">
                     </div>
                 </form>
@@ -173,7 +173,7 @@
                 <div class="col-md-3 col-sm-3">
                     <div class="row">
                         <div class="block_logo">
-                            <img src="img/v3.png" alt="alt">
+                            <img src="img/v5.1.png" alt="alt">
                         </div>
                     </div>
                 </div>
@@ -422,21 +422,17 @@
                         </li>
                     </ul>
                 </div>
+                <div class="news_footer">
+                    <a href="#">Посмотреть все новости (15)</a>
+                </div>
             </div>
             <div class="col-md-9">
                     <div class="wrapp_slider">
                         <div class="container-fluid">
                             <div class="row">
                                 <ul class="bxslider">
-                                    <!--<li>-->
-                                        <!--<img src="img/sliders/act1.jpg">-->
-                                        <!--<div class="content_slider">-->
-                                            <!--<h2 class="header_content_slider">акция</h2>-->
-                                            <!--<p class="inner_slider">описание акции</p>-->
-                                        <!--</div>-->
-                                    <!--</li>-->
                                     <li>
-                                        <img src="http://placehold.it/450x150/9aafc2/ffffff">
+                                        <img src="http://placehold.it/450x150/21bc3e/ffffff">
                                         <div class="content_slider">
                                             <h2 class="header_content_slider">Спецпредложение</h2>
                                             <p class="inner_slider">Описание</p>
@@ -444,6 +440,13 @@
                                     </li>
                                     <li>
                                         <img src="http://placehold.it/450x150/9aafc2/ffffff">
+                                        <div class="content_slider">
+                                            <h2 class="header_content_slider">Другая акция</h2>
+                                            <p class="inner_slider">описание</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="http://placehold.it/450x150/ed8b2f/ffffff">
                                         <div class="content_slider">
                                             <h2 class="header_content_slider">Другая акция</h2>
                                             <p class="inner_slider">описание</p>

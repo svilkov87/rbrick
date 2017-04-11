@@ -1,3 +1,45 @@
+<?php
+
+include("include/connection.php");
+
+## проверка ошибок
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
+//$type = $_POST['offer_type'];
+//$del = $_POST['offer_delivery'];
+//$cName = $_POST['client_name'];
+
+//if(isset($_POST['send_online_offer'])){
+//    $insert = $pdo->prepare("
+//    INSERT INTO `online_offers`
+//    SET
+//    client_type=:client_type,
+//    delivery=:delivery,
+//    client_name=:client_name,
+//    adress=:adress,
+//    contacts=:contacts,
+//    message=:message
+//    ");
+//    $insert->bindParam(':client_type', $_POST['offer_type']);
+//    $insert->bindParam(':delivery', $_POST['offer_delivery']);
+//    $insert->bindParam(':client_name', $_POST['client_name']);
+//    $insert->bindParam(':adress', $_POST['adress']);
+//    $insert->bindParam(':contacts', $_POST['contacts']);
+//    $insert->bindParam(':message', $_POST['offer_message']);
+//    $insert->execute();
+//}
+
+//Считаем общее количество вопросов(тем)
+//$testDb = $pdo->query('SELECT * FROM `online_offers`')->fetchColumn();
+//
+//echo "<pre>";
+//var_dump($testDb);
+//echo "</pre>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +54,7 @@
   	            mode: 'fade',           // тип перехода между слайдами может быть 'horizontal', 'vertical', 'fade'
             captions: true,         // отображение title
             easing: 'easeInOutQuad',// анимация слайда
-            controls: true,         // отображение стрелки - вперед, назад
+            controls: false,         // отображение стрелки - вперед, назад
             startSlide: 0,          // Показ начнется с заданного слайда
             infiniteLoop: true,     // показывать первый слайд за последним 
             auto: true,             // сделать автоматический переход
@@ -84,7 +126,7 @@
             <div class="col-md-3 col-sm-3">
                 <div class="row">
                     <div class="block_logo">
-                        <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/v3.png" alt="">
+                        <img src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/v3.png" alt="alt">
                     </div>
                 </div>
             </div>
@@ -333,6 +375,9 @@
                     </li>
                 </ul>
             </div>
+            <div class="news_footer">
+                <a href="#">Посмотреть все новости (15)</a>
+            </div>
         </div>
         <div class="col-md-9">
             <div class="wrapp_slider">
@@ -340,7 +385,7 @@
                     <div class="row">
                         <ul class="bxslider">
                             <li>
-                                <img src="http://placehold.it/450x150/9aafc2/ffffff">
+                                <img src="http://placehold.it/450x150/21bc3e/ffffff">
                                 <div class="content_slider">
                                     <h2 class="header_content_slider">Спецпредложение</h2>
                                     <p class="inner_slider">Описание</p>
@@ -348,6 +393,13 @@
                             </li>
                             <li>
                                 <img src="http://placehold.it/450x150/9aafc2/ffffff">
+                                <div class="content_slider">
+                                    <h2 class="header_content_slider">Другая акция</h2>
+                                    <p class="inner_slider">описание</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/450x150/ed8b2f/ffffff">
                                 <div class="content_slider">
                                     <h2 class="header_content_slider">Другая акция</h2>
                                     <p class="inner_slider">описание</p>
