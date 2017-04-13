@@ -4,6 +4,16 @@ $(document).ready(function () {
         $(".ul_nav").slideToggle(100);
     });
 
+    //выпадающее меню media ul_mb
+    $(".plus_product").click(function () {
+        $(".sideb_ul_mb").slideToggle(100);
+    });
+
+    //выпадающее меню media news
+    $(".plus_news").click(function () {
+        $(".news > .bx-wrapper").slideToggle(100);
+    });
+
     //иниц jqurey style forms
     // $("#offer_online_form select").styler();
 
@@ -61,13 +71,11 @@ $(document).ready(function () {
     $('.li_nav').hover(
         function () {
             $('ul:first', this).fadeIn(150);
-            // $(this).css("background" , "#4a9dc6");
             $(this).css("background" , "#a62828");
         },
         function () {
             $('ul:first', this).fadeOut(10);
-            // $(this).css("background" , "#59b8e8");
-            $(this).css("background" , "#db2d2d");
+            $(this).css("background" , "#7f2828");
         }
     );
 

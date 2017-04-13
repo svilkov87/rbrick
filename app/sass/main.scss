@@ -549,11 +549,26 @@ hr{
 //sidebar
 .sidebar {
   .side_product {
+    position: relative;
     text-transform: uppercase;
     margin-bottom: 15px;
     background: $sb_items;
     padding: 10px;
     border: $brdr_def;
+    @include mobile_l{
+      margin-bottom: 2px;
+    }
+    .plus_product{
+      display: none;
+      @include tablet_max{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-weight: bold;
+        color: #908989;
+      }
+    }
   }
   .sideb_ul {
     border: $brdr_def;
@@ -601,7 +616,7 @@ hr{
       .side_addition_block {
         display: none;
         top: 0;
-        left: 103%;
+        left: 102%;
         width: 250px;
         z-index: 101010;
         height: auto;
@@ -649,8 +664,10 @@ hr{
   .sideb_ul_mb {
     display: none;
     margin-bottom: 15px;
+    background: #fff;
+    border: $brdr_def;
     @include tablet_max{
-      display: block;
+      display: none;
     }
     .side_li_mb {
       position: relative;
@@ -727,7 +744,11 @@ hr{
   margin-bottom: 15px;
   background: #fff;
   border: $brdr_def;
+  @include mobile_l{
+    display: none;
+  }
   .news_head{
+    position: relative;
     padding: 10px;
     background: $navbg;
     color: $nav_top_clr;
@@ -768,6 +789,9 @@ hr{
   }
 }
 .news_footer{
+  @include mobile_l{
+    display: none;
+  }
   a{
     padding: 10px;
     color: $search_hover;
@@ -912,6 +936,116 @@ hr{
   }
 }
 
+//кирпич облииц
+.wrapp_obl_brick{
+  height: auto;
+  overflow: hidden;
+  .wrapp_obl_filter{
+    padding: 10px;
+    background: #fff;
+    border: $brdr_def;
+    margin-bottom: 15px;
+    @include bradius(3px);
+    .head_obl_filter{
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    #brick_obl_form{
+      .ul_obl_filt{
+        display: block;
+        margin: 10px 0;
+        overflow: hidden;
+        .li_obl_filt{
+          float: left;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          p{
+            margin-bottom: 10px;
+            text-transform: lowercase;
+          }
+          select{
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 5px;
+            min-width: 130px;
+            @include bradius(3px);
+            @include mobile_s{
+              min-width: 115px;
+            }
+            @include mobile_l{
+              min-width: 165px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrapp_preview{
+    .t_preview{
+      border: $brdr_def;
+      .tr_bg{
+        background: #fff;
+      }
+      @include mobile_l{
+        display: none;
+      }
+      .prev_head{
+        background: $navbg;
+        color: $nav_top_clr;
+      }
+      .img_prev_obl{
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+    }
+    .wrapp_media{
+      .media_features_obl{
+        display: none;
+        @include mobile_l{
+          display: block;
+          padding: 10px;
+          background: $navbg;
+          color: $nav_top_clr;
+          text-transform: capitalize;
+        }
+      }
+      .media_body_obl{
+        padding: 15px 0;
+        overflow: hidden;
+        display: none;
+        @include mobile_l{
+          display: block;
+          padding: 10px;
+          text-transform: capitalize;
+        }
+        .img_prev_obl{
+          width: 100%;
+        }
+        .items{
+          .name{
+            color: #308ac4;
+            font-size: 14px;
+            text-decoration: underline;
+          }
+          .bold{
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+
+    .wrapp_head_prew{
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+      background: $navbg;
+      color: $nav_top_clr;
+    }
+  }
+}
 //footer
 .footer {
   background: $foot_bg;
