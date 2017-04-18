@@ -10,30 +10,34 @@ ini_set('display_startup_errors', TRUE);
 $st = $pdo->query('SELECT * FROM `brick`');
 $oblBricks = $st->fetchAll();
 
-//echo "<pre>";
-//var_dump($oblBricks);
-//echo "</pre>";
+//фильтр
+if(isset ($_GET['go_filter'])){
+    $size = $_GET['obl_size'];
+    $brand = $_GET['obl_brand'];
+    // $_SESSION["size"] = $_POST["obl_size"];
+    // $_SESSION["brand"] = $_POST["obl_brand"];
 
-//$title = $_POST['title'];
+    // $stm = $pdo->prepare('SELECT * FROM `brick` WHERE sz=:sz AND brand=:brand ');
+    // $stm->bindParam(':sz', $size, PDO::PARAM_INT);
+    // $stm->bindParam(':brand', $brand, PDO::PARAM_INT);
+    // $stm->execute();
+    // $Filter = $stm->fetchAll();
 
+    $st = $pdo->query("SELECT * FROM `brick` WHERE sz LIKE '%$size%'");
+    $st->execute(array($size));
+    $data = $st->fetchAll();
 
-if(isset ($_POST['go_filter'])){
-    $size = $_POST['obl_size'];
-    $brand = $_POST['obl_brand'];
-    $stm = $pdo->prepare('SELECT * FROM `brick` WHERE sz=:sz AND brand=:brand ');
-    $stm->bindParam(':sz', $size, PDO::PARAM_INT);
-    $stm->bindParam(':brand', $brand, PDO::PARAM_INT);
-    $stm->execute();
-    $Filter = $stm->fetchAll();
+    echo '<pre>';
+    var_dump($_data);
+    echo '</pre>';
 
-//    echo '<pre>';
-//    var_dump($Filter);
-//    echo '</pre>';
-//
-//    echo '<pre>';
-//    var_dump($_POST['obl_brand']);
-//    echo '</pre>';
 }
+
+   echo '<pre>';
+   var_dump($_GET);
+   echo '</pre>';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -84,51 +88,37 @@ if(isset ($_POST['go_filter'])){
             <?php include("../include/news.php");?>
         </div>
         <div class="col-md-9">
-            <div class="category_header">каталог продукции</div>
+            <div class="category_header">Кирпич облицвочный</div>
             <div class="wrapp_obl_brick">
                 <!--filter-->
                 <div class="wrapp_obl_filter">
                     <div class="head_obl_filter">
                         Применить фильтр
                     </div>
-                    <form action="" method="post" id="brick_obl_form">
+                    <form action="" method="get" id="brick_obl_form">
                         <ul class="ul_obl_filt">
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
-                                    <option value="<?php echo $_POST['obl_size']; ?>"><?php echo $_POST['obl_size']; ?></option>
-                                    <option value="all">все</option>
-                                    <?php foreach ($oblBricks as $item): ?>
+                                <?php if (isset($_POST['go_filter'])):?> 
+                                    <option value="<?php echo $_SESSION["size"]; ?>"><?php echo $_SESSION["size"]; ?></option>
+                                <?php endif; ?>
+                                <?php foreach ($oblBricks as $item): ?>
                                     <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
-                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
                                 </select>
                             </li>
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
-                                    <option value="<?php echo $_POST['obl_brand']; ?>"><?php echo $_POST['obl_brand']; ?></option>
-                                    <option value="all">все</option>
+                                    <?php if (isset($_POST['go_filter'])):?> 
+                                    <option value="<?php echo $_SESSION["brand"]; ?>"><?php echo $_SESSION["brand"]; ?></option>
+                                    <?php endif; ?>
                                     <?php foreach ($oblBricks as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </li>
-<!--                            <li class="li_obl_filt">-->
-<!--                                <p class="lable">Цвет</p>-->
-<!--                                <select name="obl_color">-->
-<!--                                    <option value="1">все</option>-->
-<!--                                    <option value="2">test</option>-->
-<!--                                    <option value="3">test</option>-->
-<!--                                </select>-->
-<!--                            </li>-->
-<!--                            <li class="li_obl_filt">-->
-<!--                                <p class="lable">фактура</p>-->
-<!--                                <select name="obl_facture">-->
-<!--                                    <option value="1">все</option>-->
-<!--                                    <option value="2">test</option>-->
-<!--                                    <option value="3">test</option>-->
-<!--                                </select>-->
-<!--                            </li>-->
                         </ul>
                         <input type="submit" value="go" name="go_filter">
                     </form>
