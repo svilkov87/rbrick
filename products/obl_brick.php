@@ -13,6 +13,27 @@ $oblBricks = $st->fetchAll();
 //echo "<pre>";
 //var_dump($oblBricks);
 //echo "</pre>";
+
+//$title = $_POST['title'];
+
+
+if(isset ($_POST['go_filter'])){
+    $size = $_POST['obl_size'];
+    $brand = $_POST['obl_brand'];
+    $stm = $pdo->prepare('SELECT * FROM `brick` WHERE sz=:sz AND brand=:brand ');
+    $stm->bindParam(':sz', $size, PDO::PARAM_INT);
+    $stm->bindParam(':brand', $brand, PDO::PARAM_INT);
+    $stm->execute();
+    $Filter = $stm->fetchAll();
+
+//    echo '<pre>';
+//    var_dump($Filter);
+//    echo '</pre>';
+//
+//    echo '<pre>';
+//    var_dump($_POST['obl_brand']);
+//    echo '</pre>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +43,25 @@ $oblBricks = $st->fetchAll();
     <title>Кирпич облицовочный</title>
     <meta name="description" content="rbrick-nn.ru" />
     <?php include("../include/head.php");?>
+    <script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //news
+            $('.bx_news').bxSlider({
+                mode: 'vertical',
+                tickerHover: false,
+                responsive: true,
+                controls: false,
+                auto: true,
+                speed: 2000,
+                pause: 6000,
+                minSlides: 2,
+                pager: false,
+                slideMargin: 5
+            });
+        });
+    </script>
+    <link href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
 </head>
 <body>
 <?php include("../include/modal.php");?>
@@ -56,36 +96,39 @@ $oblBricks = $st->fetchAll();
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
-                                    <option value="1">все</option>
-                                    <option value="2">test</option>
-                                    <option value="3">test</option>
+                                    <option value="all">все</option>
+                                    <?php foreach ($oblBricks as $item): ?>
+                                    <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </li>
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
-                                    <option value="1">все</option>
-                                    <option value="2">test</option>
-                                    <option value="3">test</option>
+                                    <option value="all">все</option>
+                                    <?php foreach ($oblBricks as $item): ?>
+                                        <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </li>
-                            <li class="li_obl_filt">
-                                <p class="lable">Цвет</p>
-                                <select name="obl_color">
-                                    <option value="1">все</option>
-                                    <option value="2">test</option>
-                                    <option value="3">test</option>
-                                </select>
-                            </li>
-                            <li class="li_obl_filt">
-                                <p class="lable">фактура</p>
-                                <select name="obl_facture">
-                                    <option value="1">все</option>
-                                    <option value="2">test</option>
-                                    <option value="3">test</option>
-                                </select>
-                            </li>
+<!--                            <li class="li_obl_filt">-->
+<!--                                <p class="lable">Цвет</p>-->
+<!--                                <select name="obl_color">-->
+<!--                                    <option value="1">все</option>-->
+<!--                                    <option value="2">test</option>-->
+<!--                                    <option value="3">test</option>-->
+<!--                                </select>-->
+<!--                            </li>-->
+<!--                            <li class="li_obl_filt">-->
+<!--                                <p class="lable">фактура</p>-->
+<!--                                <select name="obl_facture">-->
+<!--                                    <option value="1">все</option>-->
+<!--                                    <option value="2">test</option>-->
+<!--                                    <option value="3">test</option>-->
+<!--                                </select>-->
+<!--                            </li>-->
                         </ul>
+                        <input type="submit" value="go" name="go_filter">
                     </form>
                 </div>
                 <!--/filter-->
@@ -101,16 +144,29 @@ $oblBricks = $st->fetchAll();
                         </tr>
                         </thead>
                         <tbody>
+                        <?php if (isset ($_POST['go_filter'])):?>
+                            <?php foreach ($Filter as $item): ?>
+                            <tr class="tr_bg">
+                                <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
+                                <td><?php echo $item['name']; ?></td>
+                                <td><?php echo $item['mark']; ?></td>
+                                <td><?php echo $item['brand']; ?></td>
+                                <td><?php echo $item['price']; ?></td>
+                            </tr>
+                            <?php endforeach;?>
+
+                        <?php else:?>
                         <?php foreach ($oblBricks as $item): ?>
-                        <tr class="tr_bg">
-                            <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
-                            <td><?php echo $item['name']; ?></td>
-                            <td><?php echo $item['mark']; ?></td>
-                            <td><?php echo $item['brand']; ?></td>
-                            <td><?php echo $item['price']; ?></td>
-                        </tr>
+                            <tr class="tr_bg">
+                                <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
+                                <td><?php echo $item['name']; ?></td>
+                                <td><?php echo $item['mark']; ?></td>
+                                <td><?php echo $item['brand']; ?></td>
+                                <td><?php echo $item['price']; ?></td>
+                            </tr>
                         <?php endforeach;?>
                         </tbody>
+                        <?php endif;?>
                     </table>
                     <!--media-->
                     <div class="wrapp_media">
