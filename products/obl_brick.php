@@ -96,6 +96,7 @@ if(isset ($_POST['go_filter'])){
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
+                                    <option value="<?php echo $_POST['obl_size']; ?>"><?php echo $_POST['obl_size']; ?></option>
                                     <option value="all">все</option>
                                     <?php foreach ($oblBricks as $item): ?>
                                     <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
@@ -105,6 +106,7 @@ if(isset ($_POST['go_filter'])){
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
+                                    <option value="<?php echo $_POST['obl_brand']; ?>"><?php echo $_POST['obl_brand']; ?></option>
                                     <option value="all">все</option>
                                     <?php foreach ($oblBricks as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
