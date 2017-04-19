@@ -6,6 +6,7 @@ error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 
+
 //вывод категорий
 $st = $pdo->query('SELECT * FROM `brick`');
 $oblBricks = $st->fetchAll();
@@ -14,24 +15,18 @@ $oblBricks = $st->fetchAll();
 if(isset ($_GET['go_filter'])){
     $size = $_GET['obl_size'];
     $brand = $_GET['obl_brand'];
-    // $_SESSION["size"] = $_POST["obl_size"];
-    // $_SESSION["brand"] = $_POST["obl_brand"];
 
-    // $stm = $pdo->prepare('SELECT * FROM `brick` WHERE sz=:sz AND brand=:brand ');
-    // $stm->bindParam(':sz', $size, PDO::PARAM_INT);
-    // $stm->bindParam(':brand', $brand, PDO::PARAM_INT);
-    // $stm->execute();
-    // $Filter = $stm->fetchAll();
+     $sNB = "sz LIKE '%$size%' AND brand LIKE '%$brand%'";
 
-    $st = $pdo->query("SELECT * FROM `brick` WHERE sz LIKE '%$size%'");
+    $st = $pdo->query("SELECT * FROM `brick` WHERE $sNB");
     $st->execute(array($size));
-    $data = $st->fetchAll();
-
-    echo '<pre>';
-    var_dump($_data);
-    echo '</pre>';
-
+    $st->execute(array($brand));
+    $filter = $st->fetchAll();
+//    echo '<pre>';
+//    var_dump($filter);
+//    echo '</pre>';
 }
+
 
    echo '<pre>';
    var_dump($_GET);
@@ -100,10 +95,7 @@ if(isset ($_GET['go_filter'])){
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
-                                <?php if (isset($_POST['go_filter'])):?> 
-                                    <option value="<?php echo $_SESSION["size"]; ?>"><?php echo $_SESSION["size"]; ?></option>
-                                <?php endif; ?>
-                                <?php foreach ($oblBricks as $item): ?>
+                                <?php foreach ($oblBricks as $item):?>
                                     <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
                                 <?php endforeach; ?>
                                 </select>
@@ -111,9 +103,6 @@ if(isset ($_GET['go_filter'])){
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
-                                    <?php if (isset($_POST['go_filter'])):?> 
-                                    <option value="<?php echo $_SESSION["brand"]; ?>"><?php echo $_SESSION["brand"]; ?></option>
-                                    <?php endif; ?>
                                     <?php foreach ($oblBricks as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
                                     <?php endforeach; ?>
@@ -136,8 +125,8 @@ if(isset ($_GET['go_filter'])){
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if (isset ($_POST['go_filter'])):?>
-                            <?php foreach ($Filter as $item): ?>
+                        <?php if (isset ($_GET['go_filter'])):?>
+                            <?php foreach ($filter as $item): ?>
                             <tr class="tr_bg">
                                 <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
                                 <td><?php echo $item['name']; ?></td>
@@ -163,6 +152,34 @@ if(isset ($_GET['go_filter'])){
                     <!--media-->
                     <div class="wrapp_media">
                         <div class="media_features_obl">характеристики</div>
+                        <?php if (isset($_GET['go_filter'])):?>
+                            <?php foreach ($filter as $item): ?>
+                                <div class="media_body_obl">
+                                    <div class="col-md-2 col-sm-2 col-xs-4 img_block">
+                                        <img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-8 items">
+                                        <div class="col-md-3 col-sm-3">
+                                            <a href="#">
+                                                <p class="name"><?php echo $item['name']; ?></p>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3">
+                                            <span>марка</span>
+                                            <span class="bold"><?php echo $item['mark']; ?></span>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3">
+                                            <span>производитель</span>
+                                            <span class="bold"><?php echo $item['brand']; ?></span>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3">
+                                            <span>цена</span>
+                                            <span class="bold"><?php echo $item['price']; ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else:?>
                         <?php foreach ($oblBricks as $item): ?>
                         <div class="media_body_obl">
                             <div class="col-md-2 col-sm-2 col-xs-4 img_block">
@@ -189,6 +206,7 @@ if(isset ($_GET['go_filter'])){
                             </div>
                         </div>
                         <?php endforeach; ?>
+                        <?php endif;?>
                     </div>
                     <!--/media-->
                 </div>
