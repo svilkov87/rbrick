@@ -6,31 +6,41 @@ error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 
-
-//вывод категорий
-$st = $pdo->query('SELECT * FROM `brick`');
-$oblBricks = $st->fetchAll();
-
 //фильтр
 if(isset ($_GET['go_filter'])){
     $size = $_GET['obl_size'];
     $brand = $_GET['obl_brand'];
 
+    //для вывода в select/option
+    $st = $pdo->query('SELECT id, sz, brand FROM `brick`');
+    $oblBricks = $st->fetchAll();
+
+    //для вывода в контент
      $sNB = "sz LIKE '%$size%' AND brand LIKE '%$brand%'";
 
     $st = $pdo->query("SELECT * FROM `brick` WHERE $sNB");
     $st->execute(array($size));
     $st->execute(array($brand));
     $filter = $st->fetchAll();
-//    echo '<pre>';
-//    var_dump($filter);
-//    echo '</pre>';
+
+    foreach ($oblBricks as $key => $value) {
+        if (in_array($size, $value) || in_array($brand, $value)) {
+            unset($oblBricks[$key]);
+            echo "есть совпадение";
+        }
+    }
+}
+else{
+//вывод категорий
+$st = $pdo->query('SELECT * FROM `brick`');
+$oblBricks = $st->fetchAll();
 }
 
 
-   echo '<pre>';
-   var_dump($_GET);
-   echo '</pre>';
+
+echo '<pre>';
+var_dump($oblBricks);
+echo '</pre>';
 
 
 ?>
@@ -95,14 +105,22 @@ if(isset ($_GET['go_filter'])){
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
-                                <?php foreach ($oblBricks as $item):?>
-                                    <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
-                                <?php endforeach; ?>
+                                    <?php  if (isset($_GET['obl_size'])):?>
+                                        <option value="<?php echo $size; ?>"><?php echo $size; ?></option>
+                                    <?php endif;?>
+                                    <option value="все">все</option>
+                                    <?php foreach ($oblBricks as $item):?>
+                                        <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </li>
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
+                                    <?php  if (isset($_GET['obl_brand'])):?>
+                                        <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
+                                    <?php endif;?>
+                                    <option value="все">все</option>
                                     <?php foreach ($oblBricks as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
                                     <?php endforeach; ?>
