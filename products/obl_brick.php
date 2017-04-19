@@ -10,37 +10,91 @@ ini_set('display_startup_errors', TRUE);
 if(isset ($_GET['go_filter'])){
     $size = $_GET['obl_size'];
     $brand = $_GET['obl_brand'];
-
-    //для вывода в select/option
-    $st = $pdo->query('SELECT id, sz, brand FROM `brick`');
-    $oblBricks = $st->fetchAll();
+    $color = $_GET['obl_color'];
+    $surface = $_GET['obl_surface'];
 
     //для вывода в контент
-     $sNB = "sz LIKE '%$size%' AND brand LIKE '%$brand%'";
+     $allFilter = "sz LIKE '%$size%' AND brand LIKE '%$brand%' AND color LIKE '%$color%' AND surface LIKE '%$surface%'";
 
-    $st = $pdo->query("SELECT * FROM `brick` WHERE $sNB");
+    $st = $pdo->query("SELECT * FROM `brick` WHERE $allFilter");
     $st->execute(array($size));
     $st->execute(array($brand));
+    $st->execute(array($color));
+    $st->execute(array($surface));
     $filter = $st->fetchAll();
 
-    foreach ($oblBricks as $key => $value) {
-        if (in_array($size, $value) || in_array($brand, $value)) {
-            unset($oblBricks[$key]);
-            echo "есть совпадение";
+}
+//else{
+////вывод категорий
+//$st = $pdo->query('SELECT * FROM `brick`');
+//$oblBricks = $st->fetchAll();
+//}
+
+//размер
+if(!empty($_GET['obl_size'])){
+    $st = $pdo->query('SELECT sz FROM `brick`');
+    $sz = $st->fetchAll();
+
+    //не показываем уже выбранные теги в  select option
+    foreach ($sz as $key => $value) {
+        if (in_array($size, $value)) {
+            unset($sz[$key]);
         }
     }
 }
 else{
-//вывод категорий
-$st = $pdo->query('SELECT * FROM `brick`');
-$oblBricks = $st->fetchAll();
+    $st = $pdo->query('SELECT sz FROM `brick`');
+    $sz = $st->fetchAll();
+}
+
+//производитель
+if(!empty($_GET['obl_brand'])){
+    $st = $pdo->query('SELECT brand FROM `brick` GROUP BY brand');
+    $br = $st->fetchAll();
+
+    //не показываем уже выбранные теги в  select option
+    foreach ($br as $key => $value) {
+        if (in_array($brand, $value)) {
+            unset($br[$key]);
+        }
+    }
+}
+else{
+    $st = $pdo->query('SELECT brand FROM `brick`');
+    $br = $st->fetchAll();
+}
+
+//цвет
+if(!empty($_GET['obl_color'])){
+    $st = $pdo->query('SELECT color FROM `brick` GROUP BY color');
+    $clr = $st->fetchAll();
+
+    //не показываем уже выбранные теги в  select option
+    foreach ($clr as $key => $value) {
+        if (in_array($color, $value)) {
+            unset($clr[$key]);
+        }
+    }
+}
+
+//поверхность / фактура
+if(!empty($_GET['obl_surface'])){
+    $st = $pdo->query('SELECT surface FROM `brick` GROUP BY surface');
+    $srf = $st->fetchAll();
+
+    //не показываем уже выбранные теги в  select option
+    foreach ($srf as $key => $value) {
+        if (in_array($surface, $value)) {
+            unset($srf[$key]);
+        }
+    }
 }
 
 
 
-echo '<pre>';
-var_dump($oblBricks);
-echo '</pre>';
+//echo '<pre>';
+//var_dump($oblBricks);
+//echo '</pre>';
 
 
 ?>
@@ -105,25 +159,61 @@ echo '</pre>';
                             <li class="li_obl_filt">
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
-                                    <?php  if (isset($_GET['obl_size'])):?>
+                                    <?php if (isset($_GET['obl_size'])): ?>
                                         <option value="<?php echo $size; ?>"><?php echo $size; ?></option>
-                                    <?php endif;?>
-                                    <option value="все">все</option>
-                                    <?php foreach ($oblBricks as $item):?>
-                                        <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
-                                    <?php endforeach; ?>
+                                        <option value="все">все</option>
+                                    <?php endif; ?>
+                                        <?php foreach ($sz as $item): ?>
+                                            <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
+                                        <?php endforeach;?>
                                 </select>
                             </li>
                             <li class="li_obl_filt">
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
                                     <?php  if (isset($_GET['obl_brand'])):?>
-                                        <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
-                                    <?php endif;?>
+                                    <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
                                     <option value="все">все</option>
-                                    <?php foreach ($oblBricks as $item): ?>
+                                    <?php endif;?>
+                                    <?php foreach ($br as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
-                                    <?php endforeach; ?>
+                                    <?php endforeach;?>
+                                </select>
+                            </li>
+
+                            <li class="li_obl_filt">
+                                <p class="lable">цвет</p>
+                                <select name="obl_color">
+                                    <?php  if (isset($_GET['obl_color'])):?>
+                                        <option value="<?php echo $color; ?>"><?php echo $color; ?></option>
+                                        <option value="все">все</option>
+                                    <?php foreach ($clr as $item): ?>
+                                        <option value="<?php echo $item['color']; ?>"><?php echo $item['color']; ?></option>
+                                    <?php endforeach;
+                                        else:?>
+                                            <option value="все">все</option>
+                                            <?php foreach ($oblBricks as $item): ?>
+                                                <option value="<?php echo $item['color']; ?>"><?php echo $item['color']; ?></option>
+                                            <?php endforeach; ?>
+                                    <?php endif;?>
+                                </select>
+                            </li>
+
+                            <li class="li_obl_filt">
+                                <p class="lable">поверхность</p>
+                                <select name="obl_surface">
+                                    <?php  if (isset($_GET['obl_surface'])):?>
+                                    <option value="<?php echo $surface; ?>"><?php echo $surface; ?></option>
+                                    <option value="все">все</option>
+                                    <?php foreach ($srf as $item): ?>
+                                        <option value="<?php echo $item['surface']; ?>"><?php echo $item['surface']; ?></option>
+                                    <?php endforeach;
+                                        else:?>
+                                            <option value="все">все</option>
+                                            <?php foreach ($oblBricks as $item): ?>
+                                                <option value="<?php echo $item['surface']; ?>"><?php echo $item['surface']; ?></option>
+                                            <?php endforeach; ?>
+                                    <?php endif;?>
                                 </select>
                             </li>
                         </ul>
