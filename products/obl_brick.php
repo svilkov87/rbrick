@@ -8,102 +8,198 @@ ini_set('display_startup_errors', TRUE);
 
 //фильтр
 if(isset ($_GET['go_filter'])){
+
     $size = $_GET['obl_size'];
+    if ($size == "все"){
+        $size = 1;
+        $fieldSz = "all_sz";
+    }
+    else{
+        $size = $_GET['obl_size'];
+        $fieldSz = "sz";
+    }
+    //
     $brand = $_GET['obl_brand'];
+    if ($brand == "все"){
+        $brand = 1;
+        $fieldBr = "all_brand";
+    }
+    else{
+        $brand = $_GET['obl_brand'];
+        $fieldBr = "brand";
+    }
+
     $color = $_GET['obl_color'];
+    if ($color == "все"){
+        $color = 1;
+        $fieldClr = "all_color";
+    }
+    else{
+        $color = $_GET['obl_color'];
+        $fieldClr = "color";
+    }
+
+
     $surface = $_GET['obl_surface'];
+    if ($surface == "все"){
+        $surface = 1;
+        $fieldSrf = "all_surface";
+    }
+    else{
+        $surface = $_GET['obl_surface'];
+        $fieldSrf = "surface";
+    }
 
-    //для вывода в контент
-     $allFilter = "sz LIKE '%$size%' AND brand LIKE '%$brand%' AND color LIKE '%$color%' AND surface LIKE '%$surface%'";
+    $mark = $_GET['obl_mark'];
+    if ($mark == "все"){
+        $mark = 1;
+        $fieldMrk = "all_mark";
+    }
+    else{
+        $mark = $_GET['obl_mark'];
+        $fieldMrk = "mark";
+    }
 
-    $st = $pdo->query("SELECT * FROM `brick` WHERE $allFilter");
-    $st->execute(array($size));
-    $st->execute(array($brand));
-    $st->execute(array($color));
-    $st->execute(array($surface));
-    $filter = $st->fetchAll();
+    $material = $_GET['obl_mat'];
+    if ($material == "все"){
+        $material = 1;
+        $fieldMtr = "all_material";
+    }
+    else{
+        $material = $_GET['obl_mat'];
+        $fieldMtr = "material";
+    }
 
+    //test
+        $st = $pdo->query("
+        SELECT * FROM `obl_brick` 
+        WHERE 
+        $fieldSz LIKE '%$size%' 
+        AND $fieldBr LIKE '%$brand%' 
+        AND $fieldClr LIKE '%$color%' 
+        AND $fieldSrf LIKE '%$surface%'
+        AND $fieldMrk LIKE '%$mark%'
+        AND $fieldMtr LIKE '%$material%'
+        ");
+        $st->execute(array($size));
+        $st->execute(array($brand));
+        $st->execute(array($color));
+        $st->execute(array($surface));
+        $st->execute(array($mark));
+        $st->execute(array($material));
+        $filter = $st->fetchAll();
 }
 else{
 //вывод категорий
-$st = $pdo->query('SELECT * FROM `brick`');
+$st = $pdo->query('SELECT * FROM `obl_brick`');
 $oblBricks = $st->fetchAll();
 }
 
 //размер
 if(!empty($_GET['obl_size'])){
-    $st = $pdo->query('SELECT sz FROM `brick` GROUP BY sz');
+    $st = $pdo->query('SELECT sz FROM `obl_brick_sizes`');
     $sz = $st->fetchAll();
 
     //не показываем уже выбранные теги в  select option
     foreach ($sz as $key => $value) {
-        if (in_array($size, $value)) {
+        if (in_array($_GET['obl_size'], $value)) {
             unset($sz[$key]);
         }
     }
 }
 else{
-    $st = $pdo->query('SELECT sz FROM `brick` GROUP BY sz');
+    $st = $pdo->query('SELECT sz FROM `obl_brick_sizes`');
     $sz = $st->fetchAll();
 }
 
 //производитель
 if(!empty($_GET['obl_brand'])){
-    $st = $pdo->query('SELECT brand FROM `brick` GROUP BY brand');
+    $st = $pdo->query('SELECT brand FROM `obl_brick_brands`');
     $br = $st->fetchAll();
 
     //не показываем уже выбранные теги в  select option
     foreach ($br as $key => $value) {
-        if (in_array($brand, $value)) {
+        if (in_array($_GET['obl_brand'], $value)) {
             unset($br[$key]);
         }
     }
 }
 else{
-    $st = $pdo->query('SELECT brand FROM `brick` GROUP BY brand');
+    $st = $pdo->query('SELECT brand FROM `obl_brick_brands`');
     $br = $st->fetchAll();
 }
 
 //цвет
 if(!empty($_GET['obl_color'])){
-    $st = $pdo->query('SELECT color FROM `brick` GROUP BY color');
+    $st = $pdo->query('SELECT color FROM `obl_brick_colors`');
     $clr = $st->fetchAll();
 
     //не показываем уже выбранные теги в  select option
     foreach ($clr as $key => $value) {
-        if (in_array($color, $value)) {
+        if (in_array($_GET['obl_color'], $value)) {
             unset($clr[$key]);
         }
     }
 }
 else{
-    $st = $pdo->query('SELECT color FROM `brick` GROUP BY color');
+    $st = $pdo->query('SELECT color FROM `obl_brick_colors`');
     $clr = $st->fetchAll();
 }
 
 //поверхность / фактура
 if(!empty($_GET['obl_surface'])){
-    $st = $pdo->query('SELECT surface FROM `brick` GROUP BY surface');
+    $st = $pdo->query('SELECT surface FROM `obl_brick_surfaces`');
     $srf = $st->fetchAll();
 
     //не показываем уже выбранные теги в  select option
     foreach ($srf as $key => $value) {
-        if (in_array($surface, $value)) {
+        if (in_array($_GET['obl_surface'], $value)) {
             unset($srf[$key]);
         }
     }
 }
 else{
-    $st = $pdo->query('SELECT surface FROM `brick` GROUP BY surface');
+    $st = $pdo->query('SELECT surface FROM `obl_brick_surfaces`');
     $srf = $st->fetchAll();
 }
 
+//марка
+if(!empty($_GET['obl_mark'])){
+    $st = $pdo->query('SELECT mark FROM `obl_brick_mark`');
+    $mrk = $st->fetchAll();
 
+    //не показываем уже выбранные теги в  select option
+    foreach ($mrk as $key => $value) {
+        if (in_array($_GET['obl_mark'], $value)) {
+            unset($mrk[$key]);
+        }
+    }
+}
+else{
+    $st = $pdo->query('SELECT mark FROM `obl_brick_mark`');
+    $mrk = $st->fetchAll();
+}
 
-//echo '<pre>';
-//var_dump($oblBricks);
-//echo '</pre>';
+//материал
+if(!empty($_GET['obl_mat'])){
+    $st = $pdo->query('SELECT material FROM `obl_brick_material`');
+    $mtr = $st->fetchAll();
 
+    //не показываем уже выбранные теги в  select option
+    foreach ($mtr as $key => $value) {
+        if (in_array($_GET['obl_mat'], $value)) {
+            unset($mtr[$key]);
+        }
+    }
+}
+else{
+    $st = $pdo->query('SELECT material FROM `obl_brick_material`');
+    $mtr = $st->fetchAll();
+}
+
+echo '<pre>';
+var_dump($_GET);
+echo '</pre>';
 
 ?>
 
@@ -168,8 +264,7 @@ else{
                                 <p class="lable">размер</p>
                                 <select name="obl_size">
                                     <?php if (isset($_GET['obl_size'])): ?>
-                                        <option value="<?php echo $size; ?>"><?php echo $size; ?></option>
-                                        <option value="все">все</option>
+                                        <option value="<?php echo $_GET['obl_size']; ?>"><?php echo $_GET['obl_size']; ?></option>
                                     <?php endif; ?>
                                         <?php foreach ($sz as $item): ?>
                                             <option value="<?php echo $item['sz']; ?>"><?php echo $item['sz']; ?></option>
@@ -180,8 +275,7 @@ else{
                                 <p class="lable">производитель</p>
                                 <select name="obl_brand">
                                     <?php  if (isset($_GET['obl_brand'])):?>
-                                    <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
-                                    <option value="все">все</option>
+                                    <option value="<?php echo $_GET['obl_brand']; ?>"><?php echo $_GET['obl_brand']; ?></option>
                                     <?php endif;?>
                                     <?php foreach ($br as $item): ?>
                                         <option value="<?php echo $item['brand']; ?>"><?php echo $item['brand']; ?></option>
@@ -193,8 +287,7 @@ else{
                                 <p class="lable">цвет</p>
                                 <select name="obl_color">
                                     <?php  if (isset($_GET['obl_color'])):?>
-                                        <option value="<?php echo $color; ?>"><?php echo $color; ?></option>
-                                        <option value="все">все</option>
+                                        <option value="<?php echo $_GET['obl_color']; ?>"><?php echo $_GET['obl_color']; ?></option>
                                     <?php endif;?>
                                     <?php foreach ($clr as $item): ?>
                                         <option value="<?php echo $item['color']; ?>"><?php echo $item['color']; ?></option>
@@ -206,11 +299,32 @@ else{
                                 <p class="lable">поверхность</p>
                                 <select name="obl_surface">
                                     <?php  if (isset($_GET['obl_surface'])):?>
-                                    <option value="<?php echo $surface; ?>"><?php echo $surface; ?></option>
-                                    <option value="все">все</option>
+                                    <option value="<?php echo $_GET['obl_surface']; ?>"><?php echo $_GET['obl_surface']; ?></option>
                                     <?php endif;?>
                                     <?php foreach ($srf as $item): ?>
                                         <option value="<?php echo $item['surface']; ?>"><?php echo $item['surface']; ?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </li>
+                            <li class="li_obl_filt">
+                                <p class="lable">марка</p>
+                                <select name="obl_mark">
+                                    <?php  if (isset($_GET['obl_mark'])):?>
+                                    <option value="<?php echo $_GET['obl_mark']; ?>"><?php echo $_GET['obl_mark']; ?></option>
+                                    <?php endif;?>
+                                    <?php foreach ($mrk as $item): ?>
+                                        <option value="<?php echo $item['mark']; ?>"><?php echo $item['mark']; ?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </li>
+                            <li class="li_obl_filt">
+                                <p class="lable">материал</p>
+                                <select name="obl_mat">
+                                    <?php  if (isset($_GET['obl_mat'])):?>
+                                    <option value="<?php echo $_GET['obl_mat']; ?>"><?php echo $_GET['obl_mat']; ?></option>
+                                    <?php endif;?>
+                                    <?php foreach ($mtr as $item): ?>
+                                        <option value="<?php echo $item['material']; ?>"><?php echo $item['material']; ?></option>
                                     <?php endforeach;?>
                                 </select>
                             </li>
