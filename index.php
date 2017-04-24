@@ -7,6 +7,16 @@ error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 
+//if (isset($_GET['get_res'])) {
+//    $que = $_GET['live_search'];
+//    $st = $pdo->query("SELECT * FROM `obl_brick` WHERE `name` LIKE '%$que%'");
+//    $Result = $st->fetchAll();
+//}
+//
+//echo '<pre>';
+//var_dump($Result);
+//echo '</pre>';
+
 ?>
 
 <!DOCTYPE html>

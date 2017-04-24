@@ -427,7 +427,7 @@ body{
              height: 59px;
            }
          .down_form_search{
-          .down_search_field{
+          #down_search_field{
             line-height: $lh_nav_btt;
             width: 100%;
             border: none;
@@ -520,6 +520,11 @@ body{
                 @include transition(.2s);
               }
             }
+        }
+        #search_list{
+          padding: 15px;
+          position: fixed;
+          background: red;
         }
       }
     }

@@ -4,5 +4,21 @@
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/animate.css">
-	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-ae354896bf.css">
+	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-710b2190c9.css">
 	<script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //news
+            $('#down_search_field').keyup(function(){
+                var search = $('#down_search_field').val();
+                $.ajax({
+                    type: 'POST',
+                    url: "ajax/searching.php",
+                    data: {search: search},
+                    success: function (item) {
+                        $('#search_list').html(item);
+                    }
+                });
+            });
+        });
+    </script>

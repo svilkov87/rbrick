@@ -54,9 +54,10 @@
                                     <i class="fa fa-search" id="show_search"></i>
                                 </div>
                                 <div class="down_search">
-                                    <form method="post" class="down_form_search">
-                                        <input type="text" class="down_search_field" value autocomplete="off"
-                                               placeholder="Поиск товара, марка или артикул...">
+                                    <form method="get" action="" class="down_form_search">
+                                        <input type="text" id="down_search_field" name="live_search">
+                                        <input type="submit" name="get_res" value="найти" style="position: fixed;
+    z-index: 99999;">
                                     </form>
                                 </div>
                                 <div class="nav_inf_contact">
@@ -69,6 +70,9 @@
                                     <div class="col-md-4">
                                         <span class="call_link">Заказать звонок</span>
                                     </div>
+                                </div>
+                                <div id="search_list">
+
                                 </div>
                             </div>
                         </div>
