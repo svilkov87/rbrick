@@ -8,8 +8,10 @@
             <div class="side_addition_block">
                 <span class="side_add_header">Кирпич</span>
                 <ul class="add_ul">
-                    <li class="add_li"><a href="http://<?php echo $_SERVER["HTTP_HOST"];?>/products/obl_brick.php" class="a_child_side">Облицовочный</a></li>
-                    <li class="add_li"><a href="#" class="a_child_side">Рядовой</a></li>
+                    <li class="add_li"><a href="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/obl_brick.php"
+                                          class="a_child_side">Облицовочный</a></li>
+                    <li class="add_li"><a href="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/row_brick.php"
+                                          class="a_child_side">Рядовой</a></li>
                 </ul>
             </div>
         </li>
@@ -28,7 +30,8 @@
             <div class="side_addition_block">
                 <span class="side_add_header">Смеси</span>
                 <ul class="add_ul">
-                    <li class="add_li"><a href="#" class="a_child_side">Решения для декоративной и рядовой кладки</a></li>
+                    <li class="add_li"><a href="#" class="a_child_side">Решения для декоративной и рядовой кладки</a>
+                    </li>
                     <li class="add_li"><a href="#" class="a_child_side"> Решения для облицовки плиткой и камнем</a></li>
                     <li class="add_li"><a href="#" class="a_child_side"> Фасадные решения</a></li>
                     <li class="add_li"><a href="#" class="a_child_side"> Решения для выравнивания пола и стен</a></li>
@@ -73,12 +76,31 @@
                 </ul>
             </div>
         </li>
+        <li class="side_li"><a href="#" class="a_side_main">ЖБИ</a>
+            <div class="side_addition_block">
+                <ul class="add_ul">
+                    <li class="add_li"><a href="#" class="a_child_side">ЖБИ</a></li>
+                    <li class="add_li"><a href="#" class="a_child_side">ЖБИ</a></li>
+                    <li class="add_li"><a href="#" class="a_child_side">ЖБИ</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="side_li"><a href="#" class="a_side_main">Древесно-плитные материалы</a>
+            <div class="side_addition_block">
+                <ul class="add_ul">
+                    <li class="add_li"><a href="#" class="a_child_side">Древесно-плитные материалы</a></li>
+                    <li class="add_li"><a href="#" class="a_child_side">Древесно-плитные материалы</a></li>
+                    <li class="add_li"><a href="#" class="a_child_side">Древесно-плитные материалы</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
     <ul class="sideb_ul_mb">
         <li class="side_li_mb"><a href="#" class="a_side_main_mb">Кирпич</a>
             <div class="mb_desc">
                 <ul class="add_ul_mb">
-                    <li class="add_li_mb"><a href="http://<?php echo $_SERVER["HTTP_HOST"];?>/products/obl_brick.php" class="a_child_side_mb">облицовочный</a></li>
+                    <li class="add_li_mb"><a href="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/products/obl_brick.php"
+                                             class="a_child_side_mb">облицовочный</a></li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb">рядовой</a></li>
                 </ul>
             </div>
@@ -89,14 +111,18 @@
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb">Газобетонные блоки</a></li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb">Керамические крупноформатные</a></li>
                 </ul>
-            </div></li>
+            </div>
+        </li>
         <li class="side_li_mb"><a href="#" class="a_side_main_mb">Сухие смеси</a>
             <div class="mb_desc">
                 <ul class="add_ul_mb">
-                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для декоративной и рядовой кладки</a></li>
-                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для облицовки плиткой и камнем</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для декоративной и рядовой
+                            кладки</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для облицовки плиткой и
+                            камнем</a></li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Фасадные решения</a></li>
-                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для выравнивания пола и стен</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Решения для выравнивания пола и стен</a>
+                    </li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Цемент и цементо-песчанные смеси</a></li>
                 </ul>
             </div>
@@ -132,6 +158,27 @@
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Брусчатка</a></li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Бордюры</a></li>
                     <li class="add_li_mb"><a href="#" class="a_child_side_mb"> Декоративные элементы</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="side_li_mb"><a href="#" class="a_side_main_mb">ЖБИ</a>
+            <div class="mb_desc">
+                <ul class="add_ul_mb">
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">ЖБИ</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">ЖБИ</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">ЖБИ</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="side_li_mb"><a href="#" class="a_side_main_mb">Древесно-плитные материалы</a>
+            <div class="mb_desc">
+                <ul class="add_ul_mb">
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">Древесно-плитные
+                            материалы</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">Древесно-плитные
+                            материалы</a></li>
+                    <li class="add_li_mb"><a href="#" class="a_child_side_mb">Древесно-плитные
+                            материалы</a></li>
                 </ul>
             </div>
         </li>

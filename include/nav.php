@@ -54,10 +54,8 @@
                                     <i class="fa fa-search" id="show_search"></i>
                                 </div>
                                 <div class="down_search">
-                                    <form method="get" action="" class="down_form_search">
-                                        <input type="text" id="down_search_field" name="live_search">
-                                        <input type="submit" name="get_res" value="найти" style="position: fixed;
-    z-index: 99999;">
+                                    <form class="down_form_search">
+                                        <input type="text" id="down_search_field" name="live_search" autocomplete="off">
                                     </form>
                                 </div>
                                 <div class="nav_inf_contact">
@@ -71,11 +69,11 @@
                                         <span class="call_link">Заказать звонок</span>
                                     </div>
                                 </div>
-                                <div id="search_list">
-
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div id="search_list" style="display: none;">
+
                     </div>
                 </div>
             </div>

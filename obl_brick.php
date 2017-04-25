@@ -1,5 +1,5 @@
 <?php
-include("../include/connection.php");
+include("include/connection.php");
 session_start();
 ## проверка ошибок
 error_reporting(E_ALL | E_STRICT);
@@ -72,7 +72,7 @@ if(isset ($_GET['go_filter'])){
 
     //test
         $st = $pdo->query("
-        SELECT * FROM `obl_brick` 
+        SELECT * FROM `products` 
         WHERE 
         $fieldSz LIKE '%$size%' 
         AND $fieldBr LIKE '%$brand%' 
@@ -91,7 +91,7 @@ if(isset ($_GET['go_filter'])){
 }
 else{
 //вывод категорий
-$st = $pdo->query('SELECT * FROM `obl_brick`');
+$st = $pdo->query('SELECT * FROM `products` WHERE parent = "1"');
 $oblBricks = $st->fetchAll();
 }
 
@@ -209,7 +209,7 @@ echo '</pre>';
     <meta charset="UTF-8">
     <title>Кирпич облицовочный</title>
     <meta name="description" content="rbrick-nn.ru" />
-    <?php include("../include/head.php");?>
+    <?php include("include/head.php");?>
     <script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -231,9 +231,9 @@ echo '</pre>';
     <link href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
 </head>
 <body>
-<?php include("../include/modal.php");?>
-<?php include("../include/online_offer.php");?>
-<?php include("../include/nav.php");?>
+<?php include("include/modal.php");?>
+<?php include("include/online_offer.php");?>
+<?php include("include/nav.php");?>
 <div class="container">
     <hr>
 </div>
@@ -247,8 +247,8 @@ echo '</pre>';
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <?php include("../include/sidebar.php");?>
-            <?php include("../include/news.php");?>
+            <?php include("include/sidebar.php");?>
+            <?php include("include/news.php");?>
         </div>
         <div class="col-md-9">
             <div class="category_header">Кирпич облицвочный</div>
@@ -349,7 +349,11 @@ echo '</pre>';
                             <?php foreach ($filter as $item): ?>
                             <tr class="tr_bg">
                                 <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
-                                <td><?php echo $item['name']; ?></td>
+                                <td>
+                                    <a href="full_product.php?id=<?php echo $item['id'];?>">
+                                        <?php echo $item['name']; ?>
+                                    </a>
+                                </td>
                                 <td><?php echo $item['mark']; ?></td>
                                 <td><?php echo $item['brand']; ?></td>
                                 <td><?php echo $item['price']; ?></td>
@@ -360,7 +364,11 @@ echo '</pre>';
                         <?php foreach ($oblBricks as $item): ?>
                             <tr class="tr_bg">
                                 <td><img class="img_prev_obl" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/img/preview_prod/<?php echo $item['img']; ?>" alt="alt"></td>
-                                <td><?php echo $item['name']; ?></td>
+                                <td>
+                                    <a href="full_product.php?id=<?php echo $item['id']; ?>">
+                                        <?php echo $item['name']; ?>
+                                    </a>
+                                </td>
                                 <td><?php echo $item['mark']; ?></td>
                                 <td><?php echo $item['brand']; ?></td>
                                 <td><?php echo $item['price']; ?></td>
@@ -466,6 +474,6 @@ echo '</pre>';
         </div>
     </div>
 </div>
-<?php include("../include/scripts.php");?>
+<?php include("include/scripts.php");?>
 </body>
 </html>

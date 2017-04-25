@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/animate.css">
-	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-710b2190c9.css">
+	<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/css/main-9cf1107822.css">
 	<script src="http://<?php echo $_SERVER["HTTP_HOST"];?>/app/libs/jquery/jquery-1.11.1.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -16,7 +16,11 @@
                     url: "ajax/searching.php",
                     data: {search: search},
                     success: function (item) {
+                        $('#search_list').show();
                         $('#search_list').html(item);
+                        if (search == ""){
+                            $('#search_list').hide();
+                        }
                     }
                 });
             });

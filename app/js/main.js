@@ -40,10 +40,10 @@ $(document).ready(function () {
     });
 
     //вращающийся линк поиска
-    $(".down_search_field").mouseenter(function () {
+    $("#down_search_field").mouseenter(function () {
         $("#show_search").addClass('run_show_search');
     });
-    $('.down_search_field').mouseleave(function(){
+    $('#down_search_field').mouseleave(function(){
         $("#show_search").removeClass('run_show_search');
     });
 

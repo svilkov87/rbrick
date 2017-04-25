@@ -359,6 +359,7 @@ body{
       }
     }
     .block_nav_info {
+      position: relative;
       margin-left: 15px;
       overflow: hidden;
       display: block;
@@ -521,11 +522,19 @@ body{
               }
             }
         }
-        #search_list{
-          padding: 15px;
-          position: fixed;
-          background: red;
-        }
+      }
+    }
+    #search_list{
+      position: absolute;
+      padding: 15px;
+      margin-left: 15px;
+      background: #fff;
+      border: 1px solid #ccc;
+      z-index: 999;
+      @include bradius(3px);
+      .search_a{
+        padding: 10px;
+        display: block;
       }
     }
   }

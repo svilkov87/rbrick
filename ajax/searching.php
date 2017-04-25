@@ -14,12 +14,11 @@ ini_set('display_startup_errors', TRUE);
 //    ));
 if (isset($_POST['search']) && $_POST['search'] != "") {
     $que = $_POST['search'];
-    $st = $pdo->query("SELECT * FROM `obl_brick` WHERE `name` LIKE '%$que%'");
+    $st = $pdo->query("SELECT * FROM `products` WHERE `name` LIKE '%$que%'");
     $Result = $st->fetchAll();
         foreach ($Result as $item):?>
-            <div class="show_data">
-                <p><?php echo $item['name']; ?></p>
-            </div>
-
+                <a href="http://<?php echo $_SERVER["HTTP_HOST"];?>/full_product.php?id=<?php echo $item['id']?>" class="search_a">
+                    <?php echo $item['name']; ?>
+                </a>
         <?php endforeach;
 }?>
